@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ba92897b-82e0-493e-80b6-0868b64e0aed" name="Default Changelist" comment="" />
@@ -9,12 +9,13 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Twich/Interface.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Twich/ChatReader.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Script/Twich/CommandLog.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.4.4f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Animation/CoroutineTween.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Import/TwitchChatConnect/Scripts/TwitchChatClient.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/EventCommand.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Twich/Interface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Import/TwitchChatConnect/Example/Example.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Twich/ChatReader.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Script/Twich/CommandLog.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Import/TwitchChatConnect/Scripts/TwitchConfiguration.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Import/TwitchChatConnect/Scripts/TwitchChatMessage.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Script/Twich/Robot.cs" root0="FORCE_HIGHLIGHTING" />
@@ -30,6 +31,8 @@
         <option value="$PROJECT_DIR$/Assets/Script/Twich/CommandLog.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Twich/ChatReader.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Twich/Rotate.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/EventManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Script/EventCommand.cs" />
         <option value="$PROJECT_DIR$/Assets/Script/Twich/Robot.cs" />
       </list>
     </option>
@@ -63,6 +66,7 @@
       <option name="presentableId" value="Default" />
       <updated>1601975195989</updated>
       <workItem from="1601975199423" duration="17781000" />
+      <workItem from="1602002852415" duration="8016000" />
     </task>
     <servers />
   </component>
