@@ -53,9 +53,11 @@
         </e>
         <e p="Script" t="Include">
           <e p="EventCommand.cs" t="Include" />
+          <e p="EventReceiver.cs" t="Include" />
           <e p="Twich" t="Include">
             <e p="ChatReader.cs" t="Include" />
             <e p="CommandLog.cs" t="Include" />
+            <e p="Emisphere.cs" t="Include" />
             <e p="Interface.cs" t="Include" />
             <e p="Robot.cs" t="Include" />
           </e>

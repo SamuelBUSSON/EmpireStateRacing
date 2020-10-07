@@ -46,8 +46,6 @@ MonoBehaviour:
   name: Edison
   type: 1
   nbPaw: 4
-  maxBuffer: 10
+  maxBuffer: 9
   maxActionTime: 10
   eventCommand: {fileID: 11400000, guid: df60411359dd0c048807b565d86797d7, type: 2}
-  activeLeft: 0
-  activeRight: 0

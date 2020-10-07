@@ -23,6 +23,10 @@ public class EventCommand : ScriptableObject
     public delegate void BlockPaw(RobotType type, int paw);
     public event BlockPaw onBlockPaw;
 
+    public void CallBlockPaw(RobotType type, int paw)
+    {
+        onBlockPaw?.Invoke(type, paw);
+    }
     // Change speed   
     public delegate void SetCurrentSpeed(RobotType type, int paw, float speed);
     public event SetCurrentSpeed onSetCurrentSpeed;
@@ -34,6 +38,7 @@ public class EventCommand : ScriptableObject
     // Activate paw   
     public delegate void EndAction(RobotType type, int paw);
     public event EndAction onEndAction;
+    
     public void CallEndAction(RobotType type, int paw)
     {
         onEndAction?.Invoke(type, paw);

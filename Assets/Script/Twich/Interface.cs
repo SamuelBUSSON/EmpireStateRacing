@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace Twitch
@@ -30,7 +31,7 @@ namespace Twitch
         public void InstanceLog(string command, string pseudo, string[] parameters)
         {
             CommandLog commandLog = Instantiate<CommandLog>(_commandLogPrefab, transform);
-            commandLog.Init($"<color=#f33>{pseudo} : </color> {command}");
+            commandLog.Init($"<color=#f33>{pseudo} : </color> {command} {string.Join(" - ", parameters)}");
             if (last != null)
             {
                 last.transform.parent = commandLog.transform;

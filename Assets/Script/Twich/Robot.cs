@@ -9,19 +9,18 @@ namespace Twitch
         public static Robot tesla;
         public static Robot edison;
 
+        public Emisphere left;
+        public Emisphere right;
+        [Header("Information")]
         public string name;
         public RobotType type;
+        
+        [Header("Statistic")]
         public int nbPaw = 4;
-        public int maxBuffer = 10;
+        public int maxBuffer = 9;
         public float maxActionTime = 10;
         [Header("Event")] 
-        [SerializeField] private EventCommand eventCommand;
-
-        public int activeLeft;
-        [HideInInspector] public Stack<int> bufferLeft;
-        public int activeRight;
-        [HideInInspector] public Stack<int> bufferRight;
-
+        public EventCommand eventCommand;
         
         private void Awake()
         {
@@ -35,27 +34,23 @@ namespace Twitch
                 type = RobotType.edison;
                 edison = this;
             }
-
             eventCommand.onEndAction += EndAction;
             eventCommand.onBlockPaw += BlockPaw;
-        }
-
-        private void Update()
-        {
             
+            left = new Emisphere(this);
+            right = new Emisphere(this);
         }
 
         private void EndAction(RobotType _type, int paw)
         {
             if (_type != type) return;
-            if (paw < nbPaw / 2) NextActionLeft();
-            else NextActionRight();
+            if (paw%2 == 0) left.NextAction();
+            else right.NextAction();
         }
 
         private void BlockPaw(RobotType _type, int paw)
         {
             if (_type != type) return;
-            Debug.Log("BlockPaw");
             EndAction(_type, paw);
         }
         
@@ -63,59 +58,9 @@ namespace Twitch
         {
             if (paw >= nbPaw) return false;
 
-            if (paw < nbPaw / 2)
-            {
-                if (activeLeft > 0)
-                {
-                    bufferLeft.Push(paw);
-                    if (bufferLeft.Count > maxBuffer) bufferLeft.Pop();
-                }
-                else
-                {
-                    activeLeft = paw;
-                    eventCommand.CallActivatePaw(type, activeLeft);
-                }
-                eventCommand.CallSetCurrentSpeed(type, activeLeft,maxActionTime/bufferLeft.Count);
-            }
-            else
-            {
-                if (activeRight > 0)
-                {
-                    bufferRight.Push(paw);
-                    if (bufferRight.Count > maxBuffer) bufferRight.Pop();
-                }
-
-                else
-                {
-                    activeRight = paw;
-                    eventCommand.CallActivatePaw(type, activeRight);
-                    
-                }
-                eventCommand.CallSetCurrentSpeed(type, activeRight,maxActionTime/bufferRight.Count);
-            }
+            if (paw%2 == 0) left.Command(paw);
+            else right.Command(paw);
             return true;
-        }
-
-        
-        private void NextActionLeft()
-        {
-            if (bufferLeft.Count > 0)
-            {
-                activeLeft = bufferLeft.Pop();
-                eventCommand.CallActivatePaw(type, activeLeft);
-            }
-            else activeLeft = -1;
-            eventCommand.CallSetCurrentSpeed(type, activeLeft, maxActionTime/bufferLeft.Count);
-        }
-        private void NextActionRight()
-        {
-            if (bufferRight.Count > 0)
-            {
-                activeRight = bufferRight.Pop();
-                eventCommand.CallActivatePaw(type, activeRight);
-            }
-            else activeRight = -1;
-            eventCommand.CallSetCurrentSpeed(type, activeRight, maxActionTime/bufferRight.Count);
         }
     }
 }

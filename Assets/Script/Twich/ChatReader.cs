@@ -30,7 +30,7 @@ namespace Twitch
             reply = "";
             
             // Invalid parameters
-            if (parameters.Length == 0 || commandsCode.Exists(x => x == parameters[0]))
+            if (parameters.Length == 0 || !commandsCode.Exists(x => x == parameters[0]))
             {
                 reply = "Invalid command parameters.";
                 return false;
