@@ -51,7 +51,7 @@ public class Movement : MonoBehaviour
     {
         if (team != type) return;// Arnaud Tsamer
         
-        MoveLeg(paw, (paw % 2 == 0) ? _tweenLeft : _tweenRight);
+        MoveLeg(paw);
     }
 
     private void Update()
@@ -101,7 +101,7 @@ public class Movement : MonoBehaviour
     }
 
     private bool _willFall;
-    private void MoveLeg(int paw, TweenerCore<Vector3, Path, PathOptions>  tween)
+    private void MoveLeg(int paw)
     {
         Transform leg;
         switch (paw)
@@ -130,19 +130,23 @@ public class Movement : MonoBehaviour
         _midMovement = false;
         Vector3 pos = leg.position;
         Vector3[] path = {pos, pos - Vector3.forward, pos + Vector3.up};
-        tween = leg.DOPath(path, 1f, PathType.CatmullRom)
-            .OnStart(OnStartMovement)
-            .OnUpdate(() => OnMovementUpdate(tween))
-            .OnComplete(() => OnMovementCompleted(paw));
+        
+        
 
         if (paw % 2 == 0)
         {
-            _tweenLeft = tween;
+            _tweenLeft = leg.DOPath(path, 1f, PathType.CatmullRom)
+                .OnStart(OnStartMovement)
+                .OnUpdate(() => OnMovementUpdate(_tweenLeft))
+                .OnComplete(() => OnMovementCompleted(paw));
             _tweenLeft.timeScale = speedLeft;
         }
         else
         {
-            _tweenRight = tween;
+            _tweenRight = leg.DOPath(path, 1f, PathType.CatmullRom)
+                .OnStart(OnStartMovement)
+                .OnUpdate(() => OnMovementUpdate(_tweenRight))
+                .OnComplete(() => OnMovementCompleted(paw));
             _tweenRight.timeScale = speedRight;
         }
     }
