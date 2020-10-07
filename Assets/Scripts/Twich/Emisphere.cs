@@ -17,7 +17,6 @@ public class Emisphere
     }
     public void NextAction()
     {
-        Debug.Log("Next");
         if (buffer.Count > 0)
         {
             active = buffer.Pop();
@@ -28,12 +27,10 @@ public class Emisphere
         SendSpeed();
     }
 
-    public void Command(int paw)
+    public void Command(string pseudo, int paw)
     {
-        Debug.Log(_owner.name + " Command ");
         if (active >= 0)
         {
-            Debug.Log(_owner.name + " Push " + paw);
             buffer.Push(paw);
             if (buffer.Count > _owner.maxBuffer) buffer.Pop();
         }
@@ -54,7 +51,6 @@ public class Emisphere
     public void SendAction(int paw)
     {
         active = paw;
-        Debug.Log(_owner.name + " Activate " + active);
         _owner.eventCommand.CallActivatePaw(_owner.type, active);
     }
 }

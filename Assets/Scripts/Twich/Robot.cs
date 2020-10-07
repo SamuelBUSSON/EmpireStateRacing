@@ -54,12 +54,13 @@ namespace Twitch
             EndAction(_type, paw);
         }
         
-        public bool Command(int paw)
+        public bool Command(string pseudo, int paw)
         {
             if (paw >= nbPaw) return false;
-
-            if (paw%2 == 0) left.Command(paw);
-            else right.Command(paw);
+            
+            if (paw%2 == 0) left.Command(pseudo, paw);
+            else right.Command(pseudo, paw);
+            
             return true;
         }
     }

@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 8439680753013268638}
   - component: {fileID: 8439680753013268639}
   - component: {fileID: 8439680753013268637}
+  - component: {fileID: 3520405910290517580}
   m_Layer: 0
   m_Name: ChatReader
   m_TagString: Untagged
@@ -205,14 +206,38 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8439680753013268704}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7bd11f9edb5570848b43e64743c5f4d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  configurationPath: Assets/Script/Twich/config.json
+  configurationPath: Assets/Scripts/Twich/config.json
   commandPrefix: +
   automaticInit: 1
+--- !u!114 &3520405910290517580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8439680753013268704}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 291147011a1f1034c8eec106d9faef14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pseudoPlaceholder:
+  - DemonToon
+  - Un_Mouton_dans_un_Becher
+  - Daryl_Winter
+  - Smu
+  - Khadath
+  - JeanBonbeur
+  - WallaceTicot
+  - Anguilhem
+  - Poncho_del_Solar
+  - Apoal
+  - Nahkriin
 --- !u!1001 &4179646877639940181
 PrefabInstance:
   m_ObjectHideFlags: 0

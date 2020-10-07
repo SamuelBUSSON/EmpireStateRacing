@@ -54,8 +54,8 @@ namespace Twitch
             int paw = commandsCode.FindIndex(x=> x== parameters[0]);
             
             // Command
-            if (command.ToLower() == "tesla") return Robot.tesla.Command(paw);
-            return Robot.edison.Command(paw);
+            if (command.ToLower() == "tesla") return Robot.tesla.Command(pseudo, paw);
+            return Robot.edison.Command(pseudo, paw);
         
         }
 
