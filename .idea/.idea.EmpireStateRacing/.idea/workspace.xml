@@ -17,6 +17,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Twich/CommandLog.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/Mask.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@7.3.1/Runtime/UniversalRenderPipeline.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Speed.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Twich/ChatReader.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/EventCommand.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.postprocessing@2.3.0/PostProcessing/Runtime/PostProcessLayer.cs" root0="SKIP_HIGHLIGHTING" />
@@ -46,9 +47,11 @@
         <option value="$PROJECT_DIR$/Assets/Shaders/PostProcess/Comics.shader" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Players/SetDistance.cs" />
         <option value="$PROJECT_DIR$/Assets/Shaders/Mask.shader" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Twich/Emisphere.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EventCommand.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Twich/Emisphere.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Contributor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Speed.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Twich/Robot.cs" />
       </list>
     </option>
   </component>
@@ -104,6 +107,7 @@
       <workItem from="1601974047923" duration="7425000" />
       <workItem from="1602057498445" duration="1523000" />
       <workItem from="1602075968807" duration="3528000" />
+      <workItem from="1602087922970" duration="7159000" />
     </task>
     <servers />
   </component>

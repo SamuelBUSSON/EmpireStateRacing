@@ -18,8 +18,15 @@ public class EventCommand : ScriptableObject
     {
         //Debug.Log(pseudo + " : " + type + " -> "+ paw);
         onActivatePaw?.Invoke(type, paw);
+        onSendAction?.Invoke(type, paw,pseudo);
     }
     
+    
+    public delegate void SendAction(RobotType type, int paw, string pseudo);
+    public event SendAction onSendAction;
+
+
+
     // Activate paw   
     public delegate void BlockPaw(RobotType type, int paw);
     public event BlockPaw onBlockPaw;

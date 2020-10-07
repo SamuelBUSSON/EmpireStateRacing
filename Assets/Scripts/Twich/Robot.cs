@@ -18,7 +18,6 @@ namespace Twitch
         [Header("Statistic")]
         public int nbPaw = 4;
         public int maxBuffer = 9;
-        public float maxActionTime = 10;
         [Header("Event")] 
         public EventCommand eventCommand;
         
@@ -62,6 +61,12 @@ namespace Twitch
             else right.Command(pseudo, paw);
             
             return true;
+        }
+
+        public static Robot GetByType(RobotType robotType)
+        {
+            if (robotType == RobotType.edison) return edison;
+            else return tesla;
         }
     }
 }

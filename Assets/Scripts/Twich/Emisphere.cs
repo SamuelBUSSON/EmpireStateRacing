@@ -21,10 +21,14 @@ public class Emisphere
         {
             active = buffer.Pop();
             SendAction(active.pseudo, active.paw);
+            SendSpeed(active.paw);
         }
-        else active = null;
+        else
+        {
+            SendSpeed(active.paw, true);
+            active = null;
+        }
 
-        SendSpeed();
     }
 
     public void Command(string pseudo, int paw)
@@ -41,13 +45,13 @@ public class Emisphere
             SendAction(pseudo, paw);
         }
 
-        SendSpeed();
+        SendSpeed(active.paw);
     }
 
     
-    public void SendSpeed()
+    public void SendSpeed(int paw, bool stop = false)
     {
-        _owner.eventCommand.CallSetCurrentSpeed(_owner.type, active.paw,buffer.Count + 1);
+        _owner.eventCommand.CallSetCurrentSpeed(_owner.type, paw,buffer.Count + ((stop)?0:1));
     }
     public void SendAction(string pseudo, int paw)
     {
