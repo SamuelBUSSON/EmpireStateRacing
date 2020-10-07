@@ -65,6 +65,9 @@
             <e p="Interface.cs" t="Include" />
             <e p="Robot.cs" t="Include" />
           </e>
+          <e p="UI" t="Include">
+            <e p="Contributor.cs" t="Include" />
+          </e>
         </e>
         <e p="Shaders" t="Include">
           <e p="HLSL" t="Include">

@@ -10,13 +10,13 @@ public enum RobotType
 [CreateAssetMenu(fileName = "Command", menuName = "Event/Command", order = 0)]
 public class EventCommand : ScriptableObject
 {
-    // Activate paw   
+    // Activate paw
     public delegate void ActivatePaw(RobotType type, int paw);
     public event ActivatePaw onActivatePaw;
 
     public void CallActivatePaw(RobotType type, string pseudo, int paw)
     {
-        Debug.Log(pseudo + " : " + type + " -> "+ paw);
+        //Debug.Log(pseudo + " : " + type + " -> "+ paw);
         onActivatePaw?.Invoke(type, paw);
     }
     
@@ -28,7 +28,8 @@ public class EventCommand : ScriptableObject
     {
         onBlockPaw?.Invoke(type, paw);
     }
-    // Change speed   
+    
+    // Change speed       
     public delegate void SetCurrentSpeed(RobotType type, int paw, float speed);
     public event SetCurrentSpeed onSetCurrentSpeed;
     public void CallSetCurrentSpeed(RobotType type, int paw, float speed)
