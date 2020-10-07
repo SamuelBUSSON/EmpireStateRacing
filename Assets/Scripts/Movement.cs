@@ -1,4 +1,8 @@
-﻿using DG.Tweening;
+﻿using System;
+using DG.Tweening;
+using DG.Tweening.Core;
+using DG.Tweening.Plugins.Core.PathCore;
+using DG.Tweening.Plugins.Options;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -10,6 +14,9 @@ public class Movement : MonoBehaviour
     public Transform bottomRightLeg;
 
     private bool _movementInProgress;
+    private bool _midMovement;
+    private TweenerCore<Vector3, Path, PathOptions> _tween;
+    
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Keypad1))
@@ -29,16 +36,93 @@ public class Movement : MonoBehaviour
         pos.z = z;
         transform.position = pos;
     }
-    
-   
 
+
+    private Transform GetLowestLeg()
+    {
+        Transform result = bottomLeftLeg;
+        if (result.position.y > bottomRightLeg.position.y)
+            result = bottomRightLeg;
+        return result;
+    }
+
+    private Transform GetHighestLeg()
+    {
+        Transform result = topLeftLeg;
+        if (result.position.y < topRightLeg.position.y)
+            result = topRightLeg;
+        return result;
+    }
+
+    private bool CheckIfLegsCollide(Transform leg)
+    {
+        return Math.Abs(leg.position.y + 1 - GetAssociatedLeg(leg).position.y) < 0.3f;
+    }
+
+    private Transform GetAssociatedLeg( Transform leg)
+    {
+        return leg == topLeftLeg ? bottomLeftLeg :
+            leg == bottomLeftLeg ? topLeftLeg :
+            leg == topRightLeg ? bottomRightLeg :
+            leg == bottomRightLeg ? topRightLeg : leg;
+    }
+    
+    
+    private bool CheckDistanceLegs()
+    {
+        return !(GetHighestLeg().position.y - GetLowestLeg().position.y > 2.8f);
+    }
+
+    private bool _willFall;
     private void MoveLeg(Transform leg)
     {
-        if (_movementInProgress) return;
+        if (_movementInProgress || CheckIfLegsCollide(leg)) return;
+         _willFall = (Math.Abs(leg.position.y - GetHighestLeg().position.y) < 0.2f && !CheckDistanceLegs());
+        _midMovement = false;
         Vector3 pos = leg.position;
         Vector3[] path = {pos, pos - Vector3.forward, pos + Vector3.up};
-        leg.DOPath(path, 0.5f, PathType.CatmullRom)
-            .OnStart(() => _movementInProgress = true)    
-            .OnComplete(() => _movementInProgress = false);
+        _tween = leg.DOPath(path, 1f, PathType.CatmullRom)
+            .OnStart(OnStartMovement)
+            .OnUpdate(OnMovementUpdate)
+            .OnComplete(OnMovementCompleted);
+        
+    }
+
+    private void FallSpider()
+    {
+        var positionLowest = GetLowestLeg().position;
+        bottomLeftLeg.DOMoveY(positionLowest.y, 3f).SetSpeedBased(true).SetDelay(0.1f);
+        bottomRightLeg.DOMoveY(positionLowest.y, 3f).SetSpeedBased(true).SetDelay(0.1f);
+        topLeftLeg.DOMoveY(positionLowest.y + 1,3f).SetSpeedBased(true).SetDelay(0.1f);
+        topRightLeg.DOMoveY(positionLowest.y + 1,3f).SetSpeedBased(true).SetDelay(0.1f);
+    }
+
+    private void OnMovementUpdate()
+    {
+        if (_tween.ElapsedPercentage() > 0.5f && !_midMovement)
+        {
+            _midMovement = true;
+            OnMovementMid();
+        } 
+    }
+
+    private void OnMovementMid()
+    {
+        // TODO some sound
+    }
+
+    private void OnMovementCompleted()
+    {
+        _movementInProgress = false;
+        _tween.Kill();
+        _tween = null;
+        if(_willFall)
+            FallSpider();
+        _willFall = false;
+    }
+
+    private void OnStartMovement()
+    {
+        _movementInProgress = true;
     }
 }
