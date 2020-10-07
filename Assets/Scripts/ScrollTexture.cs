@@ -1,32 +1,106 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using DG.Tweening;
+using UnityAtoms.BaseAtoms;
 using UnityEngine;
 using UnityEngine.UI;
 
+public enum Digit
+{
+    One,
+    Ten,
+    Hundred
+}
 public class ScrollTexture : MonoBehaviour
 {
 
-    public float speed = 0.25f;
+
+    
+    
     public float timeToChange = 0.25f;
-    public AnimationCurve curve;
     public float offset;
+    public float baseOffset;
+    public Digit digit;
+    public FloatEvent distanceChange;
     
-    private float y = 0.0f;
-    
+    private float y;
+    private RawImage _img;
+    private static readonly int MainTex = Shader.PropertyToID("_MainTex");
+    private bool _isChangingNumber;
+    private int _currentNumber;
+
     // Start is called before the first frame update
     void Start()
     {
+        _img = GetComponent<RawImage>();
+        _img.material = Instantiate(_img.materialForRendering);
+        _img.material.SetTextureOffset(MainTex, new Vector2(0, baseOffset));
+        y = baseOffset;
         
+        distanceChange.Register(Increment);
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
-        
-        
-        y += 1 * Time.deltaTime * speed;
-        
-        GetComponent<RawImage>().materialForRendering.SetTextureOffset("_MainTex", new Vector2(0, y));
+        distanceChange.Unregister(Increment);
+    }
+
+    private void Increment(float newNumber)
+    {
+
+        if (!_isChangingNumber)
+        {
+            int count = 0;
+            int number = Mathf.RoundToInt(newNumber);
+
+            switch (digit)
+            {
+                case Digit.One:
+                    count = number % 10;
+                    break;
+                case Digit.Ten:
+                    count = number / 10 % 10;
+                    break;
+                case Digit.Hundred:
+                    count = number / 100 % 10;
+                    break;
+            }
+            
+            if (count != _currentNumber)
+            {
+                if(digit == Digit.Ten)
+                    //TODO : Add juicy sound
+                
+                DOVirtual.Float(y, GetOffset(count), timeToChange, SetOffset)
+                    .OnStart(BeginTween)
+                    .OnComplete(() => SetYoffset(count))
+                    .SetEase(Ease.OutBounce);
+            
+                _currentNumber = count;
+            }
+        }
+    }
+    
+    private void SetYoffset(int count)
+    {
+        y = GetOffset(count);
+        _isChangingNumber = false;
+    }
+    
+    private void BeginTween()
+    {
+        _isChangingNumber = true;
+    }
+
+    private void SetOffset(float value)
+    {
+        Debug.Log(gameObject.name + " move " + digit);
+        _img.materialForRendering.SetTextureOffset(MainTex, new Vector2(0, value));
+    }
+
+    private float GetOffset(int number)
+    {
+        return baseOffset + offset * number;
     }
 }

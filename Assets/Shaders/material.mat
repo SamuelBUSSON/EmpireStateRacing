@@ -33,7 +33,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _Albedo:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 0c9fb627d36dfbe4399c9499a7ca0aed, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SampleTexture2DLOD_180A457C_Texture_1:
@@ -45,11 +45,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
-    - Vector1_1FC3FDC0: 0
+    - Vector1_1FC3FDC0: 1
     - Vector1_9085AC5E: 0.2
     - Vector1_9A6C26F2: 0.3
     - Vector1_9CE0672F: 20
-    - Vector1_B0676F85: 0.28
+    - Vector1_B0676F85: 0.26
     m_Colors:
     - Color_3B153DAF: {r: 0, g: 0, b: 0, a: 0}
     - Color_E57474CB: {r: 1, g: 1, b: 1, a: 0}

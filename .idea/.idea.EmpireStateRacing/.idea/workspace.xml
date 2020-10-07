@@ -21,6 +21,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/PostProcess/CustomPostProcess.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/PostProcess/Comics.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScrollTexture.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3EAFBE1D-22CF-4565-A6A1-DF7DE10101D6/b9/e8d0963c/DOVirtual.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -32,8 +33,8 @@
         <option value="$PROJECT_DIR$/Assets/Shaders/PostProcess/CustomPostProcess.cs" />
         <option value="$PROJECT_DIR$/Assets/Shaders/PostProcess/Comics.shader" />
         <option value="$PROJECT_DIR$/Assets/Shaders/Mask.shader" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/ScrollTexture.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Players/SetDistance.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScrollTexture.cs" />
       </list>
     </option>
   </component>
