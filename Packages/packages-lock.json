@@ -1,5 +1,80 @@
 {
   "dependencies": {
+    "com.mambojambostudios.unity-atoms-base-atoms": {
+      "version": "4.3.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.mambojambostudios.unity-atoms-core": "4.3.0"
+      },
+      "url": "https://registry.npmjs.org"
+    },
+    "com.mambojambostudios.unity-atoms-core": {
+      "version": "4.3.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://registry.npmjs.org"
+    },
+    "com.mambojambostudios.unity-atoms-fsm": {
+      "version": "4.3.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.mambojambostudios.unity-atoms-core": "4.3.0",
+        "com.mambojambostudios.unity-atoms-base-atoms": "4.3.0"
+      },
+      "url": "https://registry.npmjs.org"
+    },
+    "com.mambojambostudios.unity-atoms-mobile": {
+      "version": "4.3.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.mambojambostudios.unity-atoms-core": "4.3.0"
+      },
+      "url": "https://registry.npmjs.org"
+    },
+    "com.mambojambostudios.unity-atoms-mono-hooks": {
+      "version": "4.3.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.mambojambostudios.unity-atoms-core": "4.3.0",
+        "com.mambojambostudios.unity-atoms-base-atoms": "4.3.0"
+      },
+      "url": "https://registry.npmjs.org"
+    },
+    "com.mambojambostudios.unity-atoms-scene-mgmt": {
+      "version": "4.3.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.mambojambostudios.unity-atoms-core": "4.3.0",
+        "com.mambojambostudios.unity-atoms-base-atoms": "4.3.0"
+      },
+      "url": "https://registry.npmjs.org"
+    },
+    "com.mambojambostudios.unity-atoms-tags": {
+      "version": "4.3.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.mambojambostudios.unity-atoms-core": "4.3.0",
+        "com.mambojambostudios.unity-atoms-base-atoms": "4.3.0"
+      },
+      "url": "https://registry.npmjs.org"
+    },
+    "com.mambojambostudios.unity-atoms-ui": {
+      "version": "4.3.0",
+      "depth": 0,
+      "source": "registry",
+      "dependencies": {
+        "com.mambojambostudios.unity-atoms-core": "4.3.0",
+        "com.mambojambostudios.unity-atoms-base-atoms": "4.3.0"
+      },
+      "url": "https://registry.npmjs.org"
+    },
     "com.unity.animation.rigging": {
       "version": "0.2.7-preview",
       "depth": 0,
@@ -52,6 +127,13 @@
     "com.unity.mathematics": {
       "version": "1.1.0",
       "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
+    "com.unity.postprocessing": {
+      "version": "2.3.0",
+      "depth": 0,
       "source": "registry",
       "dependencies": {},
       "url": "https://packages.unity.com"
