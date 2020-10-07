@@ -14,8 +14,9 @@ public class EventCommand : ScriptableObject
     public delegate void ActivatePaw(RobotType type, int paw);
     public event ActivatePaw onActivatePaw;
 
-    public void CallActivatePaw(RobotType type, int paw)
+    public void CallActivatePaw(RobotType type, string pseudo, int paw)
     {
+        Debug.Log(pseudo + " : " + type + " -> "+ paw);
         onActivatePaw?.Invoke(type, paw);
     }
     
