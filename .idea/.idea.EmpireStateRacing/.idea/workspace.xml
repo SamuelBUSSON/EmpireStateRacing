@@ -20,6 +20,7 @@
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@7.3.1/Shaders/2D/Sprite-Lit-Default.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/PostProcess/CustomPostProcess.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/PostProcess/Comics.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScrollTexture.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -30,8 +31,9 @@
         <option value="$PROJECT_DIR$/Assets/Shaders/HLSL/Ligth.hlsl" />
         <option value="$PROJECT_DIR$/Assets/Shaders/PostProcess/CustomPostProcess.cs" />
         <option value="$PROJECT_DIR$/Assets/Shaders/PostProcess/Comics.shader" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Players/SetDistance.cs" />
         <option value="$PROJECT_DIR$/Assets/Shaders/Mask.shader" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/ScrollTexture.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Players/SetDistance.cs" />
       </list>
     </option>
   </component>
@@ -71,7 +73,8 @@
       <option name="presentableId" value="Default" />
       <updated>1601974042152</updated>
       <workItem from="1601974047923" duration="7425000" />
-      <workItem from="1602057498445" duration="1523000" />
+      <workItem from="1602057498445" duration="1661000" />
+      <workItem from="1602059816529" duration="2036000" />
     </task>
     <servers />
   </component>

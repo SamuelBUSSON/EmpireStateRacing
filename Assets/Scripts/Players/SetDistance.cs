@@ -14,4 +14,6 @@ public class SetDistance : MonoBehaviour
     {
         currentDistance.SetValue(transform.position.y / (start.transform.position.y + end.transform.position.y));
     }
+    
+    
 }
