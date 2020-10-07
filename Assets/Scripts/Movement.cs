@@ -27,17 +27,23 @@ public class Movement : MonoBehaviour
         command.onSetCurrentSpeed += OnChangeTimescale;
     }
 
+
+
+    public float speedLeft = 1;
+    public float speedRight = 1;
+    
     private void OnChangeTimescale(RobotType type, int paw, float speed)
     {
         if (team != type) return;// Arnaud Tsamer
         if (paw % 2 == 0 )
         {
-            
-            _tweenLeft.timeScale = speed;
+            speedLeft = speed;
+            if(_tweenLeft != null) _tweenLeft.timeScale = speed;
         }
         else
         {
-            _tweenRight.timeScale = speed;
+            speedRight = speed;
+            if(_tweenRight != null) _tweenRight.timeScale = speed;
         }
     }
 
@@ -50,16 +56,6 @@ public class Movement : MonoBehaviour
 
     private void Update()
     {
-        // if (Input.GetKeyDown(KeyCode.Keypad1))
-        //     MoveLeg(bottomLeftLeg);
-        // else if (Input.GetKeyDown(KeyCode.Keypad2))
-        //     MoveLeg(bottomRightLeg);
-        // else if (Input.GetKeyDown(KeyCode.Keypad4))
-        //     MoveLeg(topLeftLeg);
-        // else if (Input.GetKeyDown(KeyCode.Keypad5)) 
-        //     MoveLeg(topRightLeg);
-
-        
         // Replace correctly the spider body
         float z = transform.position.z;
         Vector3 pos = (topLeftLeg.position + topRightLeg.position + bottomLeftLeg.position +
@@ -122,7 +118,6 @@ public class Movement : MonoBehaviour
             default:
                 leg = bottomRightLeg;
                 break;
-
         }
         
         if (_movementInProgress || CheckIfLegsCollide(leg))
@@ -139,9 +134,17 @@ public class Movement : MonoBehaviour
             .OnStart(OnStartMovement)
             .OnUpdate(() => OnMovementUpdate(tween))
             .OnComplete(() => OnMovementCompleted(paw));
-        
-        if (paw % 2 == 0) _tweenLeft = tween;
-        else _tweenRight = tween;
+
+        if (paw % 2 == 0)
+        {
+            _tweenLeft = tween;
+            _tweenLeft.timeScale = speedLeft;
+        }
+        else
+        {
+            _tweenRight = tween;
+            _tweenRight.timeScale = speedRight;
+        }
     }
 
     private void FallSpider(int paw)
