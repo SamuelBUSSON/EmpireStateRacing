@@ -12,7 +12,9 @@ public class Movement : MonoBehaviour
     public Transform topRightLeg;
     public Transform bottomLeftLeg;
     public Transform bottomRightLeg;
-
+    public float animSpeedScale = 1f;
+    
+    
     private bool _movementInProgress;
     private bool _midMovement;
     private TweenerCore<Vector3, Path, PathOptions> _tween;
@@ -91,14 +93,15 @@ public class Movement : MonoBehaviour
     private void FallSpider()
     {
         var positionLowest = GetLowestLeg().position;
-        bottomLeftLeg.DOMoveY(positionLowest.y, 3f).SetSpeedBased(true).SetDelay(0.1f);
-        bottomRightLeg.DOMoveY(positionLowest.y, 3f).SetSpeedBased(true).SetDelay(0.1f);
-        topLeftLeg.DOMoveY(positionLowest.y + 1,3f).SetSpeedBased(true).SetDelay(0.1f);
-        topRightLeg.DOMoveY(positionLowest.y + 1,3f).SetSpeedBased(true).SetDelay(0.1f);
+        bottomLeftLeg.DOMoveY(positionLowest.y, 1f).SetDelay(0.1f).OnStart(() => _movementInProgress = true);
+        bottomRightLeg.DOMoveY(positionLowest.y, 1f).SetDelay(0.1f);
+        topLeftLeg.DOMoveY(positionLowest.y + 1,1f).SetDelay(0.1f);
+        topRightLeg.DOMoveY(positionLowest.y + 1, 1f).SetDelay(0.1f).OnComplete(() => _movementInProgress = false);
     }
 
     private void OnMovementUpdate()
     {
+        _tween.timeScale = animSpeedScale;
         if (_tween.ElapsedPercentage() > 0.5f && !_midMovement)
         {
             _midMovement = true;
