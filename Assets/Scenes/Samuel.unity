@@ -3197,12 +3197,12 @@ PrefabInstance:
     - target: {fileID: 4279431894981345328, guid: 7d56c9f2cdc9b744f84d81d18fa88810,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 670
+      value: 715
       objectReference: {fileID: 0}
     - target: {fileID: 4279431894981345328, guid: 7d56c9f2cdc9b744f84d81d18fa88810,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -28.000061
+      value: -28.000122
       objectReference: {fileID: 0}
     - target: {fileID: 4279431894981345328, guid: 7d56c9f2cdc9b744f84d81d18fa88810,
         type: 3}
@@ -3742,6 +3742,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: TwichGestor
       objectReference: {fileID: 0}
+    - target: {fileID: 8439680753013268637, guid: db9fa469ef7630a4f929634b72bab46f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: db9fa469ef7630a4f929634b72bab46f, type: 3}
 --- !u!1 &1759475733
@@ -3768,7 +3773,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759475733}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4, y: -63.6, z: 50.5}
+  m_LocalPosition: {x: 0.4, y: -63.6, z: 50.8}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 1252047970}
@@ -4426,7 +4431,7 @@ PrefabInstance:
     - target: {fileID: 4279431894981345328, guid: 7d56c9f2cdc9b744f84d81d18fa88810,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -685
+      value: -715
       objectReference: {fileID: 0}
     - target: {fileID: 4279431894981345328, guid: 7d56c9f2cdc9b744f84d81d18fa88810,
         type: 3}

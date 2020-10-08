@@ -45,7 +45,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 1215
 --- !u!114 &-3109945838644621635
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -172,7 +172,7 @@ MonoBehaviour:
   - {fileID: 3014725979972194530}
   StringsBanks:
   - {fileID: 6379847529889445039}
-  stringsBankWriteTime: 637377701201424531
+  stringsBankWriteTime: 637377746136826101
   cacheVersion: 5
 --- !u!114 &2771997311085158781
 MonoBehaviour:
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/SoundbankFmod/Desktop/Master.bank
   Name: Master
-  lastModified: 637377701201574140
+  lastModified: 637377773740735181
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -298,7 +298,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/SoundbankFmod/Desktop/Master.strings.bank
   Name: Master.strings
+<<<<<<< HEAD
   lastModified: 637377701201424531
+=======
+  lastModified: 637377746136826101
+>>>>>>> UI
   LoadResult: 0
   FileSizes:
   - Name: 
@@ -326,7 +330,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 403
 --- !u!114 &7396445945300812373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,7 +353,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 899
 --- !u!114 &8630725784649827771
 MonoBehaviour:
   m_ObjectHideFlags: 0
