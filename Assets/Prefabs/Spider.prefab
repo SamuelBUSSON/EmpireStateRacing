@@ -143,6 +143,11 @@ MonoBehaviour:
   bottomRightLeg: {fileID: 9222598468826580709}
   animSpeedScale: 1
   command: {fileID: 0}
+  trails:
+  - {fileID: 6368474504263001177}
+  - {fileID: 5235688975132064169}
+  - {fileID: 5145660158935479860}
+  - {fileID: 5562521841298406475}
   team: 0
   timeScale: 1
 --- !u!114 &3291426896895285052
@@ -626,7 +631,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8575525539673556787
 Transform:
   m_ObjectHideFlags: 0
@@ -763,7 +768,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2565171711546365575
 Transform:
   m_ObjectHideFlags: 0
@@ -900,7 +905,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1444190675648643539
 Transform:
   m_ObjectHideFlags: 0
@@ -1114,7 +1119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2184094320309188214
 Transform:
   m_ObjectHideFlags: 0
