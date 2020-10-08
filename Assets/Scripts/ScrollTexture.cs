@@ -49,8 +49,8 @@ public class ScrollTexture : MonoBehaviour
     private void Increment(float newNumber)
     {
 
-        if (!_isChangingNumber)
-        {
+        //if (!_isChangingNumber)
+        //{
             int count = 0;
             int number = Mathf.RoundToInt(newNumber);
 
@@ -69,7 +69,7 @@ public class ScrollTexture : MonoBehaviour
             
             if (count != _currentNumber)
             {
-                if(digit == Digit.Ten)
+                //if(digit == Digit.Ten)
                     //TODO : Add juicy sound
                 
                 DOVirtual.Float(y, GetOffset(count), timeToChange, SetOffset)
@@ -79,7 +79,7 @@ public class ScrollTexture : MonoBehaviour
             
                 _currentNumber = count;
             }
-        }
+        //}
     }
     
     private void SetYoffset(int count)
@@ -95,7 +95,6 @@ public class ScrollTexture : MonoBehaviour
 
     private void SetOffset(float value)
     {
-        Debug.Log(gameObject.name + " move " + digit);
         _img.materialForRendering.SetTextureOffset(MainTex, new Vector2(0, value));
     }
 
