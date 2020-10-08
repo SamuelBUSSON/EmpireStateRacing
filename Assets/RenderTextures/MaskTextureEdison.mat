@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: MaskTexture
+  m_Name: MaskTextureEdison
   m_Shader: {fileID: -6465566751694194690, guid: 950464a9d3f38984d882ebcb1f7988be,
     type: 3}
   m_ShaderKeywords: 
@@ -29,7 +29,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - Texture2D_E633E60:
-        m_Texture: {fileID: 8400000, guid: f8d322e649e781647983af87b761821c, type: 2}
+        m_Texture: {fileID: 8400000, guid: c85996a02e00a954caea4ad48d4eb525, type: 2}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _AlphaTex:

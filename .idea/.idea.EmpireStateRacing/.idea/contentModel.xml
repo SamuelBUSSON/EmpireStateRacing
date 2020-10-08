@@ -177,7 +177,6 @@
           </e>
         </e>
         <e p="Scripts" t="Include">
-          <e p="BindTransform.cs" t="Include" />
           <e p="EventCommand.cs" t="Include" />
           <e p="EventReceiver.cs" t="Include" />
           <e p="Movement.cs" t="Include" />
@@ -192,6 +191,14 @@
             <e p="Emisphere.cs" t="Include" />
             <e p="Interface.cs" t="Include" />
             <e p="Robot.cs" t="Include" />
+          </e>
+          <e p="UI" t="Include">
+            <e p="Contributor.cs" t="Include" />
+            <e p="Leader.cs" t="Include" />
+            <e p="Speed.cs" t="Include" />
+          </e>
+          <e p="Utils" t="Include">
+            <e p="BindTransform.cs" t="Include" />
           </e>
         </e>
         <e p="Shaders" t="Include">
