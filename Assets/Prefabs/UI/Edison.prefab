@@ -170,6 +170,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   data: []
+  actual: 0
+  nextTimer: 60
 --- !u!1 &1588129920454942154
 GameObject:
   m_ObjectHideFlags: 0
@@ -266,6 +268,8 @@ MonoBehaviour:
   - {fileID: 5705664889795989206}
   - {fileID: 3324095909797668875}
   - {fileID: 2997666971834886884}
+  actual: 0
+  nextTimer: 60
 --- !u!1001 &1829958216812881585
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -398,6 +402,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1588129920454942165}
     m_Modifications:
+    - target: {fileID: 1519493056908508456, guid: 8259e9a70071fdf41b93a96d71e50158,
+        type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3718466292459250850, guid: 8259e9a70071fdf41b93a96d71e50158,
         type: 3}
       propertyPath: m_Name

@@ -210,6 +210,7 @@ public class Movement : MonoBehaviour
     {
         foreach (GameObject trail in trails)
         {
+            if(trail != null)
             trail.SetActive(active);
         }
     }

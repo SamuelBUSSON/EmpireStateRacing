@@ -14,7 +14,7 @@ public class Historical : MonoBehaviour
 
     public bool revert;
     // Start is called before the first frame update
-    void Awake()
+    void Start()
     {
         GetHistoricalContributor();
         GetLastContributor();
@@ -35,10 +35,18 @@ public class Historical : MonoBehaviour
             string[] split = input.Split(' ');
             data.Add(split[0], int.Parse(split[1]));
         }
-        
-        var bestContributor = data.OrderByDescending(key => key.Value).First();
-        if(!revert) historicalContributor.text = bestContributor.Key + " <size=50%>"+bestContributor.Value+"</size>";
-        else historicalContributor.text ="<size=50%>"+bestContributor.Value+"</size> " + bestContributor.Key;
+
+        if (data.Count > 0)
+        {
+            
+            var bestContributor = data.OrderByDescending(key => key.Value).First();
+            if(!revert) historicalContributor.text = bestContributor.Key + " <size=50%>"+bestContributor.Value+"</size>";
+            else historicalContributor.text ="<size=50%>"+bestContributor.Value+"</size> " + bestContributor.Key;
+        }
+        else
+        {
+            historicalContributor.text = "---";
+        }
         
     }
     
@@ -62,7 +70,7 @@ public class Historical : MonoBehaviour
         var fileName = "last_savior_"+type+".log"; 
         var sr = File.OpenText("Score/" + fileName);
         string line = sr.ReadLine();
-        if (line == "")
+        if (string.IsNullOrEmpty(line))
         {
             lastSavior.text = "---"; return;
         }

@@ -252,6 +252,8 @@ MonoBehaviour:
   - {fileID: 586106066392544283}
   - {fileID: 9047482293099738226}
   - {fileID: 2867946365544919903}
+  actual: 0
+  nextTimer: 60
 --- !u!1001 &3205999175777629145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -953,6 +955,16 @@ PrefabInstance:
         type: 3}
       propertyPath: revert
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4599766744535501175, guid: 8259e9a70071fdf41b93a96d71e50158,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 4811822373516914977, guid: 8259e9a70071fdf41b93a96d71e50158,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 1028
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8259e9a70071fdf41b93a96d71e50158, type: 3}
