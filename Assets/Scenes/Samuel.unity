@@ -2518,5 +2518,25 @@ PrefabInstance:
       propertyPath: m_Name
       value: NumberSetTesla
       objectReference: {fileID: 0}
+    - target: {fileID: 4279431895562953364, guid: 7d56c9f2cdc9b744f84d81d18fa88810,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279431895683829544, guid: 7d56c9f2cdc9b744f84d81d18fa88810,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -46.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279431896129887061, guid: 7d56c9f2cdc9b744f84d81d18fa88810,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4279431896223116817, guid: 7d56c9f2cdc9b744f84d81d18fa88810,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 16.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7d56c9f2cdc9b744f84d81d18fa88810, type: 3}
