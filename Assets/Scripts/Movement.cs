@@ -122,7 +122,7 @@ public class Movement : MonoBehaviour
         Transform other = GetAssociatedLeg(leg);
         if (top && CheckIfLegsCollide(other))
         {
-            Debug.Log("Savior Collide");
+            // Debug.Log("Savior Collide");
             command.CallSavior(team, pseudo);
 
         }
@@ -130,7 +130,7 @@ public class Movement : MonoBehaviour
         {
             if (!top && (leg == GetLowestLeg() || Math.Abs(bottomRightLeg.position.y - bottomLeftLeg.position.y) < TOLERANCE) && !CheckDistanceLegs())
             {
-                Debug.Log("Savior Fall");
+                // Debug.Log("Savior Fall");
                 command.CallSavior(team, pseudo);
             }
         }
@@ -210,8 +210,7 @@ public class Movement : MonoBehaviour
     {
         foreach (GameObject trail in trails)
         {
-            if(trail != null)
-            trail.SetActive(active);
+            if(trail != null) trail.GetComponent<TrailRenderer>().enabled = active;
         }
     }
     

@@ -39,9 +39,9 @@
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/PostProcess/CustomPostProcess.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/PostProcess/Comics.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Twich/Interface.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Movement.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Twich/Robot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScrollTexture.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Movement.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -58,10 +58,10 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/LedZepplinGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/InterfaceGestor.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EventReceiver.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Movement.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/EventCommand.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Savior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Historical.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Movement.cs" />
       </list>
     </option>
   </component>
