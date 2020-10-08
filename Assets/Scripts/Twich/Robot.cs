@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +22,9 @@ namespace Twitch
         [Header("Event")] 
         public EventCommand eventCommand;
         
+        [Header("Buffer")] 
+        public List<Buffer> buffer;
+        
         private void Awake()
         {
             if (name.ToLower() == "tesla")
@@ -37,15 +41,12 @@ namespace Twitch
             eventCommand.onBlockPaw += BlockPaw;
             
             emisphere = new Emisphere(this);
-            //right = new Emisphere(this);
         }
 
         private void EndAction(RobotType _type, int paw)
         {
             if (_type != type) return;
             emisphere.NextAction();
-            //if (paw%2 == 0) left.NextAction();
-            //else right.NextAction();
         }
 
         private void BlockPaw(RobotType _type, int paw)
@@ -69,5 +70,18 @@ namespace Twitch
             if (robotType == RobotType.edison) return edison;
             else return tesla;
         }
+    }
+}
+
+[Serializable]
+public class Buffer
+{
+    public string pseudo;
+    public int paw;
+
+    public Buffer(string _pseudo, int _paw)
+    {
+        pseudo = _pseudo;
+        paw = _paw;
     }
 }
