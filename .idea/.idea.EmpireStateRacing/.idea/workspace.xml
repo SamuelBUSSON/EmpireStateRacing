@@ -14,6 +14,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/DebugEndGame.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Twich/Emisphere.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Twich/ChatPlaceholder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/InterfaceGestor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Twich/CommandLog.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Historical.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Twich/ChatReader.cs" root0="FORCE_HIGHLIGHTING" />
@@ -54,6 +55,11 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/Players/SetDistance.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ScrollTexture.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/LedZepplinGenerator.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/InterfaceGestor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EventReceiver.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Historical.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Movement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/EventCommand.cs" />
       </list>
     </option>
   </component>

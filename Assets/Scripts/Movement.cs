@@ -42,11 +42,11 @@ public class Movement : MonoBehaviour
         
     }
 
-    private void OnActivePaw(RobotType type, int paw)
+    private void OnActivePaw(RobotType type, string pseudo, int paw)
     {
         if (team != type) return;// Arnaud Tsamer
         
-        MoveLeg(paw);
+        MoveLeg(pseudo, paw);
     }
 
     private void Update()
@@ -96,16 +96,19 @@ public class Movement : MonoBehaviour
     }
 
     private bool _willFall;
-    private void MoveLeg(int paw)
+    private void MoveLeg(string pseudo, int paw)
     {
         Transform leg;
+        bool top = false;
         switch (paw)
         {
             case 0:
                 leg = topLeftLeg;
+                top = true;
                 break;
             case 1:
                 leg = topRightLeg;
+                top = true;
                 break;
             case 2:
                 leg = bottomLeftLeg;
@@ -114,7 +117,24 @@ public class Movement : MonoBehaviour
                 leg = bottomRightLeg;
                 break;
         }
-        
+
+        float TOLERANCE = 0.2f;
+        Transform other = GetAssociatedLeg(leg);
+        if (top && CheckIfLegsCollide(other))
+        {
+            Debug.Log("Savior Collide");
+            command.CallSavior(team, pseudo);
+
+        }
+        else
+        {
+            if (!top && (leg == GetLowestLeg() || Math.Abs(bottomRightLeg.position.y - bottomLeftLeg.position.y) < TOLERANCE) && !CheckDistanceLegs())
+            {
+                Debug.Log("Savior Fall");
+                command.CallSavior(team, pseudo);
+            }
+        }
+
         if (CheckIfLegsCollide(leg))
         {
             Vector3 pos = leg.position;

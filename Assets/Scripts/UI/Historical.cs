@@ -52,7 +52,6 @@ public class Historical : MonoBehaviour
         {
             lastContributor.text = "---"; return;
         }
-        Debug.Log(line);
         string[] input = line.Split(' ');
         if(!revert) lastContributor.text = input[0] + " <size=50%>"+int.Parse(input[1])+"</size>";
         else lastContributor.text = "<size=50%>"+int.Parse(input[1])+"</size> "+input[0];
