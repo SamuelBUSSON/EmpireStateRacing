@@ -11,6 +11,7 @@ public class Leader : MonoBehaviour
     public RobotType type;
     public TextMeshProUGUI leader;
     public int paw;
+    public bool revert;
     
     // Start is called before the first frame update
     void Start()
@@ -33,7 +34,7 @@ public class Leader : MonoBehaviour
         if (!data.ContainsKey(pseudo)) data.Add(pseudo, 0);
         ++data[pseudo];
         var first = data.OrderByDescending(key => key.Value).First();
-        leader.text = first.Key+" <size=50%>"+first.Value+"</size>";
-
+        if(!revert) leader.text = first.Key+" <size=50%>"+first.Value+"</size>";
+        else leader.text = "<size=50%>"+first.Value+"</size>  "+first.Key;
     }
 }
