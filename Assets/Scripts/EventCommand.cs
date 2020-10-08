@@ -44,12 +44,20 @@ public class EventCommand : ScriptableObject
         onSetCurrentSpeed?.Invoke(type, paw, speed);
     }
     
-    // Activate paw   
     public delegate void EndAction(RobotType type, int paw);
     public event EndAction onEndAction;
     
     public void CallEndAction(RobotType type, int paw)
     {
         onEndAction?.Invoke(type, paw);
+    }
+    
+    
+    public delegate void EndGame(RobotType winner);
+    public event EndGame onEndGame;
+    
+    public void CallEndGame(RobotType winner)
+    {
+        onEndGame?.Invoke(winner);
     }
 }
