@@ -52,7 +52,7 @@ public class ScrollTexture : MonoBehaviour
         //if (!_isChangingNumber)
         //{
             int count = 0;
-            int number = Mathf.RoundToInt(newNumber);
+            int number = Mathf.RoundToInt(newNumber * 3.72f);
 
             switch (digit)
             {
@@ -101,5 +101,9 @@ public class ScrollTexture : MonoBehaviour
     private float GetOffset(int number)
     {
         return baseOffset + offset * number;
+    }
+    
+    public float Remap (float value, float from1, float to1, float from2, float to2) {
+        return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
     }
 }
