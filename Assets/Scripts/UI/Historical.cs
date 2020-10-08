@@ -48,11 +48,11 @@ public class Historical : MonoBehaviour
         var fileName = "last_contributor_"+type+".log"; 
         var sr = File.OpenText("Score/" + fileName);
         string line = sr.ReadLine();
-        if (line == "")
+        if (string.IsNullOrEmpty(line))
         {
             lastContributor.text = "---"; return;
         }
-        
+        Debug.Log(line);
         string[] input = line.Split(' ');
         if(!revert) lastContributor.text = input[0] + " <size=50%>"+int.Parse(input[1])+"</size>";
         else lastContributor.text = "<size=50%>"+int.Parse(input[1])+"</size> "+input[0];
