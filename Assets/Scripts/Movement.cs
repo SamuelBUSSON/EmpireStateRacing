@@ -114,10 +114,6 @@ public class Movement : MonoBehaviour
         
         if (CheckIfLegsCollide(leg))
         {
-    
-            Debug.Log("I WAS BLOCKED");
-            
-            
             Vector3 pos = leg.position;
             Vector3[] path = {pos, pos - Vector3.forward, pos + Vector3.up/2, pos - Vector3.forward, pos};
         

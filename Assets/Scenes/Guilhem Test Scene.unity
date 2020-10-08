@@ -1010,6 +1010,7 @@ MonoBehaviour:
   animSpeedScale: 1
   command: {fileID: 0}
   team: 0
+  timeScale: 1
 --- !u!1 &6148495910485296886
 GameObject:
   m_ObjectHideFlags: 0
