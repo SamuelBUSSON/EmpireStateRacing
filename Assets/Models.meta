@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
+guid: cedb8a357aae0c046b4c711e6dd654a5
+=======
 guid: 732ca2b7cb3aee2479d1aa40fbe9a039
+>>>>>>> InverseKinematic
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

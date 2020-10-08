@@ -12,15 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b46c0f62c93543f88d3eb693740d091, type: 3}
   m_Name: CurrentDistanceTesla
   m_EditorClassIdentifier: 
-  _developerDescription: 'Between 0 and 1
-
-    0 = start of the race
-
-    1 = ennd
-    of the race'
+  _developerDescription: 
   _id: 
   _value: 0
-  _changed: {fileID: 0}
+  _changed: {fileID: 11400000, guid: b7b538c6e7bc97e41a236989a8b95e2d, type: 2}
   _changedWithHistory: {fileID: 0}
   _triggerChangedOnOnEnable: 0
   _triggerChangedWithHistoryOnOnEnable: 0
