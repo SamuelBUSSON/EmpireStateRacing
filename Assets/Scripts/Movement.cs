@@ -62,10 +62,16 @@ public class Movement : MonoBehaviour
     {
         // Init all FMOD events
         _eventStartFmod = FMODUnity.RuntimeManager.CreateInstance(eventStart);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(_eventStartFmod, transform, rigidBody:null);
         _eventPeakFmod = FMODUnity.RuntimeManager.CreateInstance(eventPeak);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(_eventPeakFmod, transform, rigidBody:null);
         _eventImpactFmod = FMODUnity.RuntimeManager.CreateInstance(eventImpact);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(_eventImpactFmod, transform, rigidBody:null);
         _eventSlideFmod = FMODUnity.RuntimeManager.CreateInstance(eventSlide);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(_eventSlideFmod, transform, rigidBody:null);
         _eventBugFmod = FMODUnity.RuntimeManager.CreateInstance(eventBug);
+        FMODUnity.RuntimeManager.AttachInstanceToGameObject(_eventBugFmod, transform, rigidBody:null);
+
         
     }
 
