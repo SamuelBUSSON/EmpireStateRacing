@@ -71,8 +71,6 @@ public class Movement : MonoBehaviour
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(_eventSlideFmod, transform, rigidBody:null);
         _eventBugFmod = FMODUnity.RuntimeManager.CreateInstance(eventBug);
         FMODUnity.RuntimeManager.AttachInstanceToGameObject(_eventBugFmod, transform, rigidBody:null);
-
-        
     }
 
     public float timeScale = 1;
