@@ -417,7 +417,7 @@ PrefabInstance:
     - target: {fileID: 5182189758353184090, guid: 1f631b0e2461d2f4ba4d0214900e49f7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.3
+      value: 4.3
       objectReference: {fileID: 0}
     - target: {fileID: 5182189758353184090, guid: 1f631b0e2461d2f4ba4d0214900e49f7,
         type: 3}
@@ -1293,7 +1293,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1759475734}
   m_Layer: 9
-  m_Name: GameObject
+  m_Name: Building3D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1307,7 +1307,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1759475733}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 12.1, y: -63.6, z: 50.5}
+  m_LocalPosition: {x: 3.1, y: -63.6, z: 50.5}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 1252047970}
@@ -1483,7 +1483,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 70e46a46149a22a44af558a8ef44d015, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e2bfda8f605512542a7304883fe7e31b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
