@@ -62,7 +62,7 @@ public class EventReceiver : MonoBehaviour
     }
 
     public float maxActionFloat = 10;
-    private void ActivePaw(RobotType type, int paw)
+    private void ActivePaw(RobotType type, string pseudo, int paw)
     {
         if (type == RobotType.tesla)
         {
