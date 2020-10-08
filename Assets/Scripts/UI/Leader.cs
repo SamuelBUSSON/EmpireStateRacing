@@ -17,6 +17,7 @@ public class Leader : MonoBehaviour
     {
         data = new Dictionary<string, int>();
         leader = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        leader.text = "---";
         command.onSendAction += AddAction;
     }
 
