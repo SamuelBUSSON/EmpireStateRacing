@@ -9,8 +9,8 @@ namespace Twitch
         public static Robot tesla;
         public static Robot edison;
 
-        public Emisphere left;
-        public Emisphere right;
+        public Emisphere emisphere;
+        //public Emisphere right;
         [Header("Information")]
         public string name;
         public RobotType type;
@@ -36,15 +36,16 @@ namespace Twitch
             eventCommand.onEndAction += EndAction;
             eventCommand.onBlockPaw += BlockPaw;
             
-            left = new Emisphere(this);
-            right = new Emisphere(this);
+            emisphere = new Emisphere(this);
+            //right = new Emisphere(this);
         }
 
         private void EndAction(RobotType _type, int paw)
         {
             if (_type != type) return;
-            if (paw%2 == 0) left.NextAction();
-            else right.NextAction();
+            emisphere.NextAction();
+            //if (paw%2 == 0) left.NextAction();
+            //else right.NextAction();
         }
 
         private void BlockPaw(RobotType _type, int paw)
@@ -56,9 +57,9 @@ namespace Twitch
         public bool Command(string pseudo, int paw)
         {
             if (paw >= nbPaw) return false;
-            
-            if (paw%2 == 0) left.Command(pseudo, paw);
-            else right.Command(pseudo, paw);
+            emisphere.Command(pseudo, paw);
+            //if (paw%2 == 0) left.Command(pseudo, paw);
+            //else right.Command(pseudo, paw);
             
             return true;
         }

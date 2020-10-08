@@ -51,9 +51,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/EventCommand.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Twich/Emisphere.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Contributor.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Twich/Robot.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Leader.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Speed.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Twich/Robot.cs" />
       </list>
     </option>
   </component>
@@ -110,7 +110,7 @@
       <workItem from="1602057498445" duration="1523000" />
       <workItem from="1602075968807" duration="3528000" />
       <workItem from="1602087922970" duration="7159000" />
-      <workItem from="1602150237544" duration="1418000" />
+      <workItem from="1602150237544" duration="1705000" />
     </task>
     <servers />
   </component>

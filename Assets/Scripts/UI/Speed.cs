@@ -7,7 +7,6 @@ using UnityEngine.SocialPlatforms;
 
 public class Speed : MonoBehaviour
 {
-    public int emisphere;
     public RobotType type;
     [Range(-360, 360)] public float maxRotate;
     [Range(-360, 360)] public float minRotate;
@@ -30,7 +29,7 @@ public class Speed : MonoBehaviour
     private void SetCurrentSpeed(RobotType type, int paw, float speed)
     {
         double TOLERANCE = 0.1f;
-        if (this.type != type || paw%2 != emisphere || Math.Abs(speed - _actualSpeed) < TOLERANCE) return;
+        if (this.type != type || Math.Abs(speed - _actualSpeed) < TOLERANCE) return;
         _time = 0;
         
         _goToSpeed = speed;
