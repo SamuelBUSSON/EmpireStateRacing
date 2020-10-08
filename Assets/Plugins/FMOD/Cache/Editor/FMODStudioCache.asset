@@ -1,221 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-8710935878909591046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Pallier de jauge/Level_1
-  m_EditorClassIdentifier: 
-  Path: event:/Pallier de jauge/Level_1
-  guid: 10f3064709134840aba8f3e6635250e8
-  Banks:
-  - {fileID: -927586316872750168}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
---- !u!114 &-8048694286113205952
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Pallier de jauge/Level_3
-  m_EditorClassIdentifier: 
-  Path: event:/Pallier de jauge/Level_3
-  guid: d360a8653e7022408fa1b784fdcf5eac
-  Banks:
-  - {fileID: -927586316872750168}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
---- !u!114 &-7044981989777602458
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/Araign\xE9e/Mouv_Start"
-  m_EditorClassIdentifier: 
-  Path: "event:/Araign\xE9e/Mouv_Start"
-  guid: 01c68b9acb441c429c1c1397990d5a71
-  Banks:
-  - {fileID: -927586316872750168}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-4558518086965374010
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambiance/Town
-  m_EditorClassIdentifier: 
-  Path: event:/Ambiance/Town
-  guid: 222519f85abc6c4f8c99af4d7c85f48d
-  Banks:
-  - {fileID: -927586316872750168}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 123882
---- !u!114 &-927586316872750168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/SoundbankFmod/Desktop/Master.bank
-  Name: Master
-  lastModified: 637377755551408083
-  LoadResult: 0
-  FileSizes: []
-  Exists: 1
---- !u!114 &-732988984440760183
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Etage/Compteur_Dizaine
-  m_EditorClassIdentifier: 
-  Path: event:/Etage/Compteur_Dizaine
-  guid: bd905ebb9123584c88f3cbd2cc8d0035
-  Banks:
-  - {fileID: -927586316872750168}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
---- !u!114 &-285321082287764192
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/Araign\xE9e/Mouv_Impact"
-  m_EditorClassIdentifier: 
-  Path: "event:/Araign\xE9e/Mouv_Impact"
-  guid: 306b711d1c83c244bc4051d635de4abb
-  Banks:
-  - {fileID: -927586316872750168}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &-252851861253755208
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/Araign\xE9e/Mouv_Peak"
-  m_EditorClassIdentifier: 
-  Path: "event:/Araign\xE9e/Mouv_Peak"
-  guid: d31643a9c673f145a43c6e6ae2ffbb5f
-  Banks:
-  - {fileID: -927586316872750168}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &11400000
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
-  m_Name: FMODStudioCache
-  m_EditorClassIdentifier: 
-  EditorBanks:
-  - {fileID: 2031110618255089112}
-  - {fileID: -927586316872750168}
-  EditorEvents:
-  - {fileID: -7044981989777602458}
-  - {fileID: -8710935878909591046}
-  - {fileID: -4558518086965374010}
-  - {fileID: 6391713632144216793}
-  - {fileID: 1923209692608320204}
-  - {fileID: -285321082287764192}
-  - {fileID: 6927777264788191002}
-  - {fileID: 8427447363509240267}
-  - {fileID: 1565556093380904588}
-  - {fileID: -732988984440760183}
-  - {fileID: -252851861253755208}
-  - {fileID: -8048694286113205952}
-  - {fileID: 4106235138595331521}
-  EditorParameters: []
-  MasterBanks:
-  - {fileID: -927586316872750168}
-  StringsBanks:
-  - {fileID: 2031110618255089112}
-  stringsBankWriteTime: 637377746136826101
-  cacheVersion: 5
---- !u!114 &1565556093380904588
+--- !u!114 &-4521278126511895982
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -230,7 +15,7 @@ MonoBehaviour:
   Path: event:/Etage/Compteur_Slide
   guid: 6c1512714c537f42a7b99429c41c8861
   Banks:
-  - {fileID: -927586316872750168}
+  - {fileID: 3014725979972194530}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -238,7 +23,7 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
---- !u!114 &1923209692608320204
+--- !u!114 &-4302293276289140482
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -248,55 +33,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambiance/Public_Applause
+  m_Name: "event:/Araign\xE9e/Mouv_Impact"
   m_EditorClassIdentifier: 
-  Path: event:/Ambiance/Public_Applause
-  guid: 2a26e57e82dc8445bc963a36be476119
+  Path: "event:/Araign\xE9e/Mouv_Impact"
+  guid: 306b711d1c83c244bc4051d635de4abb
   Banks:
-  - {fileID: -927586316872750168}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
---- !u!114 &2031110618255089112
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
-  m_Name: bank:/Master.strings.bank
-  m_EditorClassIdentifier: 
-  Path: Assets/SoundbankFmod/Desktop/Master.strings.bank
-  Name: Master.strings
-  lastModified: 637377746136826101
-  LoadResult: 0
-  FileSizes:
-  - Name: 
-    Value: 1288
-  Exists: 1
---- !u!114 &4106235138595331521
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/Araign\xE9e/Bug"
-  m_EditorClassIdentifier: 
-  Path: "event:/Araign\xE9e/Bug"
-  guid: e5b978210e325a4fab3298e6fc219963
-  Banks:
-  - {fileID: -927586316872750168}
+  - {fileID: 3014725979972194530}
   IsStream: 0
   Is3D: 1
   IsOneShot: 1
@@ -304,53 +46,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &6391713632144216793
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: "event:/Araign\xE9e/Slide"
-  m_EditorClassIdentifier: 
-  Path: "event:/Araign\xE9e/Slide"
-  guid: 283480645ce07a47ac9ea46460e276a1
-  Banks:
-  - {fileID: -927586316872750168}
-  IsStream: 0
-  Is3D: 1
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &6927777264788191002
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Ambiance/Public_Disappointed
-  m_EditorClassIdentifier: 
-  Path: event:/Ambiance/Public_Disappointed
-  guid: 5e194949dddd3e4697f1fd02be44347f
-  Banks:
-  - {fileID: -927586316872750168}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
---- !u!114 &8427447363509240267
+--- !u!114 &-3109945838644621635
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -365,11 +61,315 @@ MonoBehaviour:
   Path: event:/Pallier de jauge/Level_2
   guid: 5f290fa12da4da44b246167c13b864f8
   Banks:
-  - {fileID: -927586316872750168}
+  - {fileID: 3014725979972194530}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
+  Length: 0
+--- !u!114 &-2889929568105165851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiance/Public_Applause
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiance/Public_Applause
+  guid: 2a26e57e82dc8445bc963a36be476119
+  Banks:
+  - {fileID: 3014725979972194530}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-1322962771932380566
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiance/Public_Disappointed
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiance/Public_Disappointed
+  guid: 5e194949dddd3e4697f1fd02be44347f
+  Banks:
+  - {fileID: 3014725979972194530}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-1253726711059850030
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Etage/Compteur_Dizaine
+  m_EditorClassIdentifier: 
+  Path: event:/Etage/Compteur_Dizaine
+  guid: bd905ebb9123584c88f3cbd2cc8d0035
+  Banks:
+  - {fileID: 3014725979972194530}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: 6379847529889445039}
+  - {fileID: 3014725979972194530}
+  EditorEvents:
+  - {fileID: 7396445945300812373}
+  - {fileID: 3672310270073796395}
+  - {fileID: 2771997311085158781}
+  - {fileID: 3095124446880378445}
+  - {fileID: -2889929568105165851}
+  - {fileID: -4302293276289140482}
+  - {fileID: -1322962771932380566}
+  - {fileID: -3109945838644621635}
+  - {fileID: -4521278126511895982}
+  - {fileID: -1253726711059850030}
+  - {fileID: 6837190656137643345}
+  - {fileID: 3783501977340999209}
+  - {fileID: 8630725784649827771}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 3014725979972194530}
+  StringsBanks:
+  - {fileID: 6379847529889445039}
+  stringsBankWriteTime: 637377701201424531
+  cacheVersion: 5
+--- !u!114 &2771997311085158781
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiance/Town
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiance/Town
+  guid: 222519f85abc6c4f8c99af4d7c85f48d
+  Banks:
+  - {fileID: 3014725979972194530}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 123882
+--- !u!114 &3014725979972194530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/SoundbankFmod/Desktop/Master.bank
+  Name: Master
+  lastModified: 637377701201574140
+  LoadResult: 0
+  FileSizes: []
+  Exists: 1
+--- !u!114 &3095124446880378445
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Araign\xE9e/Slide"
+  m_EditorClassIdentifier: 
+  Path: "event:/Araign\xE9e/Slide"
+  guid: 283480645ce07a47ac9ea46460e276a1
+  Banks:
+  - {fileID: 3014725979972194530}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &3672310270073796395
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Pallier de jauge/Level_1
+  m_EditorClassIdentifier: 
+  Path: event:/Pallier de jauge/Level_1
+  guid: 10f3064709134840aba8f3e6635250e8
+  Banks:
+  - {fileID: 3014725979972194530}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &3783501977340999209
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Pallier de jauge/Level_3
+  m_EditorClassIdentifier: 
+  Path: event:/Pallier de jauge/Level_3
+  guid: d360a8653e7022408fa1b784fdcf5eac
+  Banks:
+  - {fileID: 3014725979972194530}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &6379847529889445039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/SoundbankFmod/Desktop/Master.strings.bank
+  Name: Master.strings
+  lastModified: 637377701201424531
+  LoadResult: 0
+  FileSizes:
+  - Name: 
+    Value: 1288
+  Exists: 1
+--- !u!114 &6837190656137643345
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Araign\xE9e/Mouv_Peak"
+  m_EditorClassIdentifier: 
+  Path: "event:/Araign\xE9e/Mouv_Peak"
+  guid: d31643a9c673f145a43c6e6ae2ffbb5f
+  Banks:
+  - {fileID: 3014725979972194530}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &7396445945300812373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Araign\xE9e/Mouv_Start"
+  m_EditorClassIdentifier: 
+  Path: "event:/Araign\xE9e/Mouv_Start"
+  guid: 01c68b9acb441c429c1c1397990d5a71
+  Banks:
+  - {fileID: 3014725979972194530}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &8630725784649827771
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: "event:/Araign\xE9e/Bug"
+  m_EditorClassIdentifier: 
+  Path: "event:/Araign\xE9e/Bug"
+  guid: e5b978210e325a4fab3298e6fc219963
+  Banks:
+  - {fileID: 3014725979972194530}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
   Length: 0

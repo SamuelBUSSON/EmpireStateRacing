@@ -6,15 +6,34 @@ using UnityEngine;
 
 public class SetDistance : MonoBehaviour
 {
-    public FloatVariable currentDistancePercent;
+    
+    [FMODUnity.EventRef] [SerializeField] 
+    private string applauseSound;
+    
     public FloatVariable currentDistance;
+
+    public FloatVariable otherDistance;
+
+    private bool _isWinning;
+    
     public GameObject start;
     public GameObject end;
 
     private void Update()
     {
-        currentDistancePercent.SetValue(transform.position.y / (start.transform.position.y + end.transform.position.y));
         currentDistance.SetValue(transform.position.y - start.transform.position.y);
+
+        if (otherDistance.Value < currentDistance.Value && !_isWinning)
+        {
+            Debug.Log("Play applause Sound");
+            FMODUnity.RuntimeManager.PlayOneShot(applauseSound, transform.position);
+            _isWinning = true;
+        }
+
+        if (_isWinning && otherDistance.Value > currentDistance.Value)
+            _isWinning = false;
+
+
     }
 
 
