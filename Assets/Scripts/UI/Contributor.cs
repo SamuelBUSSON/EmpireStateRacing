@@ -1,6 +1,9 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text;
 using TMPro;
 using UnityEngine;
 
@@ -17,6 +20,7 @@ public class Contributor : MonoBehaviour
     {
         data = new Dictionary<string, int>();
         command.onSendAction += AddAction;
+        command.onEndGame += EndGame;
         contributors = new List<TextMeshProUGUI>();
         for (int i = 0; i < transform.childCount; ++i)
         {
@@ -50,5 +54,50 @@ public class Contributor : MonoBehaviour
         {
             contributors[disable].enabled = false;
         }
+    }
+
+    void EndGame(RobotType type)
+    {
+        Dictionary<string, int> allData = new Dictionary<string, int>();
+        var fileName = "historical_contributor_"+type+".log";
+        var sr = File.OpenText("Score/" + fileName);
+        
+        string input;
+        while (!sr.EndOfStream)
+        {
+            input = sr.ReadLine();
+            string[] split = input.Split(' ');
+            allData.Add(split[0], int.Parse(split[1]));
+        }
+        sr.Close();
+        
+        StreamWriter writer = new StreamWriter("Score/" + fileName, false);
+
+        foreach (var contributor in data)
+        {
+            if(!allData.ContainsKey(contributor.Key)) allData.Add(contributor.Key, contributor.Value);
+            else
+            {
+                allData[contributor.Key] += contributor.Value;
+            }
+        }
+        
+        foreach (var contributor in allData)
+        {
+            writer.WriteLine(contributor.Key + " " + contributor.Value);
+        }
+        writer.Close();
+
+
+        if (data.Count == 0) return;
+        
+        fileName = "last_contributor_"+type+".log";
+        writer = new StreamWriter("Score/" + fileName, false);
+        
+        var first = data.OrderByDescending(key => key.Value).First();
+        writer.WriteLine(first.Key + " " + first.Value);
+        
+        writer.Close();
+        data = new Dictionary<string, int>();
     }
 }
