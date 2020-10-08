@@ -49,7 +49,7 @@ namespace Twitch
             // Register cooldown
             StartCoroutine(Cooldown(pseudo));
             // Log command
-            Interface.Log(command, pseudo, parameters);
+            //Interface.Log(command, pseudo, parameters);
             // Paw
             int paw = commandsCode.FindIndex(x=> x== parameters[0]);
             

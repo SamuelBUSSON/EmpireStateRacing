@@ -39,6 +39,7 @@ namespace Twitch
             }
             eventCommand.onEndAction += EndAction;
             eventCommand.onBlockPaw += BlockPaw;
+            eventCommand.onEndGame += (RobotType _type) => EndGame();
             
             emisphere = new Emisphere(this);
         }
@@ -65,6 +66,11 @@ namespace Twitch
             return true;
         }
 
+        public void EndGame()
+        {
+            buffer = new List<Buffer>();
+            
+        }
         public static Robot GetByType(RobotType robotType)
         {
             if (robotType == RobotType.edison) return edison;
