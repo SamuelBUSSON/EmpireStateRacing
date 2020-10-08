@@ -1,34 +1,53 @@
 ﻿using System;
+using System.Collections;
 using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Core.PathCore;
 using DG.Tweening.Plugins.Options;
+using Twitch;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
 { // Update is called once per frame
 
-    public Transform topLeftLeg;
-    public Transform topRightLeg;
-    public Transform bottomLeftLeg;
-    public Transform bottomRightLeg;
-
-    private bool _movementInProgress;
+    public Transform topLeftLeg; //0
+    public Transform topRightLeg;//1
+    public Transform bottomLeftLeg;//2
+    public Transform bottomRightLeg;//3
+    public float animSpeedScale = 1f;//Soleil
+    public EventCommand command;
+    
     private bool _midMovement;
     private TweenerCore<Vector3, Path, PathOptions> _tween;
+    public RobotType team;
+    private void Awake()
+    {
+        command.onActivatePaw += OnActivePaw;
+        command.onSetCurrentSpeed += OnChangeTimescale;
+    }
+
+
+
+    public float timeScale = 1;
     
+    private void OnChangeTimescale(RobotType type, int paw, float speed)
+    {
+        if (team != type) return;// Arnaud Tsamer
+        
+        timeScale = speed;
+        if(_tween != null) _tween.timeScale = speed;
+        
+    }
+
+    private void OnActivePaw(RobotType type, int paw)
+    {
+        if (team != type) return;// Arnaud Tsamer
+        
+        MoveLeg(paw);
+    }
+
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Keypad1))
-            MoveLeg(bottomLeftLeg);
-        else if (Input.GetKeyDown(KeyCode.Keypad2))
-            MoveLeg(bottomRightLeg);
-        else if (Input.GetKeyDown(KeyCode.Keypad4))
-            MoveLeg(topLeftLeg);
-        else if (Input.GetKeyDown(KeyCode.Keypad5)) 
-            MoveLeg(topRightLeg);
-
-        
         // Replace correctly the spider body
         float z = transform.position.z;
         Vector3 pos = (topLeftLeg.position + topRightLeg.position + bottomLeftLeg.position +
@@ -74,34 +93,73 @@ public class Movement : MonoBehaviour
     }
 
     private bool _willFall;
-    private void MoveLeg(Transform leg)
+    private void MoveLeg(int paw)
     {
-        if (_movementInProgress || CheckIfLegsCollide(leg)) return;
-         _willFall = (Math.Abs(leg.position.y - GetHighestLeg().position.y) < 0.2f && !CheckDistanceLegs());
-        _midMovement = false;
-        Vector3 pos = leg.position;
-        Vector3[] path = {pos, pos - Vector3.forward, pos + Vector3.up};
-        _tween = leg.DOPath(path, 1f, PathType.CatmullRom)
-            .OnStart(OnStartMovement)
-            .OnUpdate(OnMovementUpdate)
-            .OnComplete(OnMovementCompleted);
-        
-    }
-
-    private void FallSpider()
-    {
-        var positionLowest = GetLowestLeg().position;
-        bottomLeftLeg.DOMoveY(positionLowest.y, 3f).SetSpeedBased(true).SetDelay(0.1f);
-        bottomRightLeg.DOMoveY(positionLowest.y, 3f).SetSpeedBased(true).SetDelay(0.1f);
-        topLeftLeg.DOMoveY(positionLowest.y + 1,3f).SetSpeedBased(true).SetDelay(0.1f);
-        topRightLeg.DOMoveY(positionLowest.y + 1,3f).SetSpeedBased(true).SetDelay(0.1f);
-    }
-
-    private void OnMovementUpdate()
-    {
-        if (_tween.ElapsedPercentage() > 0.5f && !_midMovement)
+        Transform leg;
+        switch (paw)
         {
-            _midMovement = true;
+            case 0:
+                leg = topLeftLeg;
+                break;
+            case 1:
+                leg = topRightLeg;
+                break;
+            case 2:
+                leg = bottomLeftLeg;
+                break;
+            default:
+                leg = bottomRightLeg;
+                break;
+        }
+        
+        if (CheckIfLegsCollide(leg))
+        {
+    
+            Debug.Log("I WAS BLOCKED");
+            
+            
+            Vector3 pos = leg.position;
+            Vector3[] path = {pos, pos - Vector3.forward, pos + Vector3.up/2, pos - Vector3.forward, pos};
+        
+            _tween = leg.DOPath(path, Robot.GetByType(team).maxBuffer+1, PathType.CatmullRom)
+                .OnStart(OnStartMovement)
+                .OnUpdate(() => OnMovementUpdate(_tween))
+                .OnComplete(() => StartCoroutine(EndAction(paw)));
+            _tween.timeScale = timeScale;
+        }
+        else
+        {
+            _willFall = (Math.Abs(leg.position.y - GetHighestLeg().position.y) < 0.2f && !CheckDistanceLegs());
+            _midMovement = false;
+            Vector3 pos = leg.position;
+            Vector3[] path = {pos, pos - Vector3.forward, pos + Vector3.up};
+        
+        
+
+            _tween = leg.DOPath(path, Robot.GetByType(team).maxBuffer+1, PathType.CatmullRom)
+                .OnStart(OnStartMovement)
+                .OnUpdate(() => OnMovementUpdate(_tween))
+                .OnComplete(() => OnMovementCompleted(paw));
+            _tween.timeScale = timeScale;
+        }
+    }
+    
+    
+    private void FallSpider(int paw)
+    {
+        
+        var positionLowest = GetLowestLeg().position;
+        bottomLeftLeg.DOMoveY(positionLowest.y, 1f).SetDelay(0.1f);
+        bottomRightLeg.DOMoveY(positionLowest.y, 1f).SetDelay(0.1f);
+        topLeftLeg.DOMoveY(positionLowest.y + 1,1f).SetDelay(0.1f);
+        topRightLeg.DOMoveY(positionLowest.y + 1, 1f).SetDelay(0.1f).OnComplete(() => StartCoroutine(EndAction(paw)));
+    }
+
+    private void OnMovementUpdate(TweenerCore<Vector3, Path, PathOptions> tweenerCore)
+    {
+        if (tweenerCore.ElapsedPercentage() > 0.1f && !_midMovement)
+        {
+            _midMovement = true; //TODO PLUS TARD FDP (IL Y EN A 2 MTN)
             OnMovementMid();
         } 
     }
@@ -111,18 +169,32 @@ public class Movement : MonoBehaviour
         // TODO some sound
     }
 
-    private void OnMovementCompleted()
+    private void OnMovementCompleted(int paw)
     {
-        _movementInProgress = false;
-        _tween.Kill();
-        _tween = null;
         if(_willFall)
-            FallSpider();
+            FallSpider(paw);
+        else
+        {
+            StartCoroutine(EndAction(paw));
+        }
         _willFall = false;
     }
 
+    private IEnumerator EndAction(int paw)
+    {
+        yield return new WaitForSeconds(0.1f);
+        command.CallEndAction(team, paw);
+    }
+    
+    private IEnumerator BlockAction( int paw)
+    {
+        yield return new WaitForSeconds(0.2f);
+        command.CallBlockPaw(team, paw);
+    }
+
+
     private void OnStartMovement()
     {
-        _movementInProgress = true;
+        
     }
 }
