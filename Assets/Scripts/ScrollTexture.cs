@@ -17,6 +17,11 @@ public class ScrollTexture : MonoBehaviour
 
 
     
+    [FMODUnity.EventRef] [SerializeField] 
+    private string Compteur_Dizaine;
+    
+    [FMODUnity.EventRef] [SerializeField] 
+    private string Compteur_Slide;
     
     public float timeToChange = 0.25f;
     public float offset;
@@ -27,8 +32,8 @@ public class ScrollTexture : MonoBehaviour
     private float y;
     private RawImage _img;
     private static readonly int MainTex = Shader.PropertyToID("_MainTex");
-    private bool _isChangingNumber;
     private int _currentNumber;
+    private int _number;
 
     // Start is called before the first frame update
     void Start()
@@ -48,29 +53,32 @@ public class ScrollTexture : MonoBehaviour
 
     private void Increment(float newNumber)
     {
-
-        //if (!_isChangingNumber)
-        //{
             int count = 0;
-            int number = Mathf.RoundToInt(newNumber * 3.72f);
+            
+            if(Mathf.RoundToInt(newNumber * 3.72f) < _number)
+                FMODUnity.RuntimeManager.PlayOneShot(Compteur_Slide, transform.position);
+            
+            
+            _number = Mathf.RoundToInt(newNumber * 3.72f);
+            
 
             switch (digit)
             {
                 case Digit.One:
-                    count = number % 10;
+                    count = _number % 10;
                     break;
                 case Digit.Ten:
-                    count = number / 10 % 10;
+                    count = _number / 10 % 10;
                     break;
                 case Digit.Hundred:
-                    count = number / 100 % 10;
+                    count = _number / 100 % 10;
                     break;
             }
             
             if (count != _currentNumber)
             {
-                //if(digit == Digit.Ten)
-                    //TODO : Add juicy sound
+                if(digit == Digit.Ten)
+                    FMODUnity.RuntimeManager.PlayOneShot(Compteur_Dizaine, transform.position);
                 
                 DOVirtual.Float(y, GetOffset(count), timeToChange, SetOffset)
                     .OnStart(BeginTween)
@@ -79,18 +87,15 @@ public class ScrollTexture : MonoBehaviour
             
                 _currentNumber = count;
             }
-        //}
     }
     
     private void SetYoffset(int count)
     {
         y = GetOffset(count);
-        _isChangingNumber = false;
     }
     
     private void BeginTween()
     {
-        _isChangingNumber = true;
     }
 
     private void SetOffset(float value)

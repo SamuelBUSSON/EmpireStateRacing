@@ -12,6 +12,7 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Players/SetDistance.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LedZepplinGenerator.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/../../../StageM1/Projet/Stage_Camera/Assets/Scripts/Others/MoveBody.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.postprocessing@2.3.0/PostProcessing/Runtime/PostProcessLayer.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Library/PackageCache/com.unity.render-pipelines.universal@7.3.1/Shaders/2D/Sprite-Lit-Default.shader" root0="FORCE_HIGHLIGHTING" />
@@ -23,7 +24,6 @@
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/PostProcess/Comics.shader" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScrollTexture.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/3EAFBE1D-22CF-4565-A6A1-DF7DE10101D6/b9/e8d0963c/DOVirtual.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/Scripts/LedZepplinGenerator.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -35,9 +35,9 @@
         <option value="$PROJECT_DIR$/Assets/Shaders/PostProcess/CustomPostProcess.cs" />
         <option value="$PROJECT_DIR$/Assets/Shaders/PostProcess/Comics.shader" />
         <option value="$PROJECT_DIR$/Assets/Shaders/Mask.shader" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/LedZepplinGenerator.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Players/SetDistance.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/ScrollTexture.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/LedZepplinGenerator.cs" />
       </list>
     </option>
   </component>
