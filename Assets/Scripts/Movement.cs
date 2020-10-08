@@ -4,6 +4,7 @@ using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Core.PathCore;
 using DG.Tweening.Plugins.Options;
+using Twitch;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -17,8 +18,7 @@ public class Movement : MonoBehaviour
     public EventCommand command;
     
     private bool _midMovement;
-    private TweenerCore<Vector3, Path, PathOptions> _tweenLeft;
-    private TweenerCore<Vector3, Path, PathOptions> _tweenRight;
+    private TweenerCore<Vector3, Path, PathOptions> _tween;
     public RobotType team;
     private void Awake()
     {
@@ -28,22 +28,15 @@ public class Movement : MonoBehaviour
 
 
 
-    public float speedLeft = 1;
-    public float speedRight = 1;
+    public float timeScale = 1;
     
     private void OnChangeTimescale(RobotType type, int paw, float speed)
     {
         if (team != type) return;// Arnaud Tsamer
-        if (paw % 2 == 0 )
-        {
-            speedLeft = speed;
-            if(_tweenLeft != null) _tweenLeft.timeScale = speed;
-        }
-        else
-        {
-            speedRight = speed;
-            if(_tweenRight != null) _tweenRight.timeScale = speed;
-        }
+        
+        timeScale = speed;
+        if(_tween != null) _tween.timeScale = speed;
+        
     }
 
     private void OnActivePaw(RobotType type, int paw)
@@ -123,37 +116,38 @@ public class Movement : MonoBehaviour
         {
     
             Debug.Log("I WAS BLOCKED");
-            command.CallBlockPaw(team,paw);
-            return;
-        }
-
-        _willFall = (Math.Abs(leg.position.y - GetHighestLeg().position.y) < 0.2f && !CheckDistanceLegs());
-        _midMovement = false;
-        Vector3 pos = leg.position;
-        Vector3[] path = {pos, pos - Vector3.forward, pos + Vector3.up};
+            
+            
+            Vector3 pos = leg.position;
+            Vector3[] path = {pos, pos - Vector3.forward, pos + Vector3.up/2, pos - Vector3.forward, pos};
         
-        
-
-        if (paw % 2 == 0)
-        {
-            _tweenLeft = leg.DOPath(path, 1f, PathType.CatmullRom)
+            _tween = leg.DOPath(path, Robot.GetByType(team).maxBuffer+1, PathType.CatmullRom)
                 .OnStart(OnStartMovement)
-                .OnUpdate(() => OnMovementUpdate(_tweenLeft))
-                .OnComplete(() => OnMovementCompleted(paw));
-            _tweenLeft.timeScale = speedLeft;
+                .OnUpdate(() => OnMovementUpdate(_tween))
+                .OnComplete(() => StartCoroutine(EndAction(paw)));
+            _tween.timeScale = timeScale;
         }
         else
         {
-            _tweenRight = leg.DOPath(path, 1f, PathType.CatmullRom)
+            _willFall = (Math.Abs(leg.position.y - GetHighestLeg().position.y) < 0.2f && !CheckDistanceLegs());
+            _midMovement = false;
+            Vector3 pos = leg.position;
+            Vector3[] path = {pos, pos - Vector3.forward, pos + Vector3.up};
+        
+        
+
+            _tween = leg.DOPath(path, Robot.GetByType(team).maxBuffer+1, PathType.CatmullRom)
                 .OnStart(OnStartMovement)
-                .OnUpdate(() => OnMovementUpdate(_tweenRight))
+                .OnUpdate(() => OnMovementUpdate(_tween))
                 .OnComplete(() => OnMovementCompleted(paw));
-            _tweenRight.timeScale = speedRight;
+            _tween.timeScale = timeScale;
         }
     }
-
+    
+    
     private void FallSpider(int paw)
     {
+        
         var positionLowest = GetLowestLeg().position;
         bottomLeftLeg.DOMoveY(positionLowest.y, 1f).SetDelay(0.1f);
         bottomRightLeg.DOMoveY(positionLowest.y, 1f).SetDelay(0.1f);
@@ -163,7 +157,7 @@ public class Movement : MonoBehaviour
 
     private void OnMovementUpdate(TweenerCore<Vector3, Path, PathOptions> tweenerCore)
     {
-        if (tweenerCore.ElapsedPercentage() > 0.5f && !_midMovement)
+        if (tweenerCore.ElapsedPercentage() > 0.1f && !_midMovement)
         {
             _midMovement = true; //TODO PLUS TARD FDP (IL Y EN A 2 MTN)
             OnMovementMid();
@@ -188,9 +182,16 @@ public class Movement : MonoBehaviour
 
     private IEnumerator EndAction(int paw)
     {
-        yield return new WaitForSeconds(0.01f);
+        yield return new WaitForSeconds(0.1f);
         command.CallEndAction(team, paw);
     }
+    
+    private IEnumerator BlockAction( int paw)
+    {
+        yield return new WaitForSeconds(0.2f);
+        command.CallBlockPaw(team, paw);
+    }
+
 
     private void OnStartMovement()
     {

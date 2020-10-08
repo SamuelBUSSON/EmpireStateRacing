@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -9,8 +10,8 @@ namespace Twitch
         public static Robot tesla;
         public static Robot edison;
 
-        public Emisphere left;
-        public Emisphere right;
+        public Emisphere emisphere;
+        //public Emisphere right;
         [Header("Information")]
         public string name;
         public RobotType type;
@@ -18,9 +19,11 @@ namespace Twitch
         [Header("Statistic")]
         public int nbPaw = 4;
         public int maxBuffer = 9;
-        public float maxActionTime = 10;
         [Header("Event")] 
         public EventCommand eventCommand;
+        
+        [Header("Buffer")] 
+        public List<Buffer> buffer;
         
         private void Awake()
         {
@@ -37,15 +40,13 @@ namespace Twitch
             eventCommand.onEndAction += EndAction;
             eventCommand.onBlockPaw += BlockPaw;
             
-            left = new Emisphere(this);
-            right = new Emisphere(this);
+            emisphere = new Emisphere(this);
         }
 
         private void EndAction(RobotType _type, int paw)
         {
             if (_type != type) return;
-            if (paw%2 == 0) left.NextAction();
-            else right.NextAction();
+            emisphere.NextAction();
         }
 
         private void BlockPaw(RobotType _type, int paw)
@@ -57,11 +58,30 @@ namespace Twitch
         public bool Command(string pseudo, int paw)
         {
             if (paw >= nbPaw) return false;
-            
-            if (paw%2 == 0) left.Command(pseudo, paw);
-            else right.Command(pseudo, paw);
+            emisphere.Command(pseudo, paw);
+            //if (paw%2 == 0) left.Command(pseudo, paw);
+            //else right.Command(pseudo, paw);
             
             return true;
         }
+
+        public static Robot GetByType(RobotType robotType)
+        {
+            if (robotType == RobotType.edison) return edison;
+            else return tesla;
+        }
+    }
+}
+
+[Serializable]
+public class Buffer
+{
+    public string pseudo;
+    public int paw;
+
+    public Buffer(string _pseudo, int _paw)
+    {
+        pseudo = _pseudo;
+        paw = _paw;
     }
 }
