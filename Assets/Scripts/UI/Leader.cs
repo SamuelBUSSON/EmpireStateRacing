@@ -20,6 +20,7 @@ public class Leader : MonoBehaviour
         leader = transform.GetChild(1).GetComponent<TextMeshProUGUI>();
         leader.text = "---";
         command.onSendAction += AddAction;
+        command.onEndGame += EndGame;
     }
 
     // Update is called once per frame
@@ -36,5 +37,27 @@ public class Leader : MonoBehaviour
         var first = data.OrderByDescending(key => key.Value).First();
         if(!revert) leader.text = first.Key+" <size=50%>"+first.Value+"</size>";
         else leader.text = "<size=50%>"+first.Value+"</size>  "+first.Key;
+    }
+
+    void EndGame(RobotType type)
+    {
+        string first = "---";
+        if(data.Count > 0) first = data.OrderByDescending(key => key.Value).First().Key;
+        if (this.type != type) return;
+        switch (paw)
+        {
+            case 0 : 
+                FindObjectOfType<Win>().alpha.text = first;
+                break;
+            case 1 : 
+                FindObjectOfType<Win>().beta.text = first;
+                break;
+            case 2 : 
+                FindObjectOfType<Win>().gama.text = first;
+                break;
+            case 3 : 
+                FindObjectOfType<Win>().delta.text = first;
+                break;
+        }
     }
 }

@@ -58,6 +58,12 @@ public class Contributor : MonoBehaviour
 
     void EndGame(RobotType type)
     {
+        Win win = FindObjectOfType<Win>();
+        win.SetContributors(data);
+        win.winner.text = (type == RobotType.edison)?"Thomas Edison Win":"Nicola Tesla Win";
+        win.StartTimer();
+        
+        
         Dictionary<string, int> allData = new Dictionary<string, int>();
         var fileName = "historical_contributor_"+type+".log";
         var sr = File.OpenText("Score/" + fileName);
@@ -95,6 +101,7 @@ public class Contributor : MonoBehaviour
         writer = new StreamWriter("Score/" + fileName, false);
         
         var first = data.OrderByDescending(key => key.Value).First();
+        win.best.text = first.Key;
         writer.WriteLine(first.Key + " " + first.Value);
         
         writer.Close();

@@ -250,8 +250,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
   - {fileID: 586106066392544283}
-  - {fileID: 9047482293099738226}
   - {fileID: 2867946365544919903}
+  - {fileID: 9047482293099738226}
   actual: 0
   nextTimer: 60
 --- !u!1001 &3205999175777629145

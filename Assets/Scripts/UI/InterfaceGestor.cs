@@ -7,7 +7,7 @@ public class InterfaceGestor : MonoBehaviour
     public List<CanvasGroup> data;
 
     public int actual = 0;
-    public float nextTimer = 60;
+    private float nextTimer = 20;
     
     // Start is called before the first frame update
     void Start()
@@ -23,9 +23,9 @@ public class InterfaceGestor : MonoBehaviour
         {
             data[actual].alpha = 0;
             ++actual;
-            if (actual == data.Count) actual = 0;
+            if (actual >= data.Count) actual = 0;
             data[actual].alpha = 1;
-            nextTimer = 60;
+            nextTimer = 20;
         }
     }
 }

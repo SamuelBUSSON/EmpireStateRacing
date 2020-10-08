@@ -39,6 +39,7 @@
     <setting file="file://C:/Program Files/Unity/Hub/Editor/2019.4.4f1/Editor/Data/Resources/PackageManager/BuiltInPackages/com.unity.ugui/Runtime/UI/Animation/CoroutineTween.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/PostProcess/CustomPostProcess.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Shaders/PostProcess/Comics.shader" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/UI/Win.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Twich/Interface.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/Twich/Robot.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/Scripts/ScrollTexture.cs" root0="FORCE_HIGHLIGHTING" />
@@ -61,6 +62,9 @@
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Savior.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/Historical.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Movement.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Contributor.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Leader.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/UI/Win.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/UI/InterfaceGestor.cs" />
       </list>
     </option>
