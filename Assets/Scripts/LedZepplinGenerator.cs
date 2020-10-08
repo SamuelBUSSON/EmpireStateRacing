@@ -29,6 +29,7 @@ public class LedZepplinGenerator : MonoBehaviour
     private float _currentTime;
     private List<SpawnedObject> _generatedZeppelin;
     private Camera _camera;
+    private int _previousObjNumber;
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +44,14 @@ public class LedZepplinGenerator : MonoBehaviour
         _currentTime += Time.deltaTime;
         if (_currentTime > timeToSpawn + Random.Range(-timeToSpawn/10.0f, timeToSpawn/10.0f))
         {
-            GameObject go = Instantiate(zeppelin[Random.Range(0, zeppelin.Length - 1)], transform.position, Quaternion.identity);
+
+            int randomNumb = Random.Range(0, zeppelin.Length);
+            
+            while(_previousObjNumber == randomNumb)
+                randomNumb = Random.Range(0, zeppelin.Length);
+
+            _previousObjNumber = randomNumb;
+            GameObject go = Instantiate(zeppelin[randomNumb], transform.position + Vector3.up * (Random .Range(-20.0f, 20.0f)), Quaternion.identity);
             _generatedZeppelin.Add(new SpawnedObject(go, 0.0f));
             _currentTime = 0.0f;
         }
@@ -53,7 +61,9 @@ public class LedZepplinGenerator : MonoBehaviour
     {
         foreach (SpawnedObject o in _generatedZeppelin)
         {
-            o.go.transform.position += Vector3.right * ( speed + Random.Range(-speed/10.0f, speed/10.0f)) / 100.0f * Time.fixedTime;
+            o.go.transform.position += 
+                Vector3.right * ( speed + Random.Range(-speed/2.0f, speed/2.0f)) / 100.0f * Time.fixedTime 
+                + Vector3.up * Mathf.Sin(o.go.transform.position.x * 0.05f) * 0.05f;
             o.lifetime += Time.fixedTime;
             
             if (o.lifetime > 3.0f && !o.go.GetComponentInChildren<Renderer>().isVisible)

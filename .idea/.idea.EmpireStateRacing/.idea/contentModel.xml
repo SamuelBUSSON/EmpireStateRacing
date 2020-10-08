@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ContentModelStore">
-    <e p="C:\Users\samue\.Rider2019.3\system\extResources" t="IncludeRecursive" />
-    <e p="C:\Users\samue\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_EmpireStateRacing.-166197299.00" t="ExcludeRecursive" />
-    <e p="D:\Utilisateurs\Samuel\Mes documents\Cours\Enjmin\M2\ArtGame\EmpireStateRacing" t="IncludeRecursive">
+    <e p="C:\Users\mbelk\.Rider2019.2\system\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\mbelk\.Rider2019.2\system\resharper-host\local\Transient\ReSharperHost\v192\SolutionCaches\_EmpireStateRacing.1813648249.00" t="ExcludeRecursive" />
+    <e p="D:\EspaceBecher\Realisations\enjmin\EmpireStateRacing" t="IncludeRecursive">
       <e p="Assembly-CSharp-Editor-firstpass.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp-firstpass.csproj" t="IncludeRecursive" />
@@ -180,8 +180,9 @@
           <e p="EventCommand.cs" t="Include" />
           <e p="EventReceiver.cs" t="Include" />
           <e p="LedZepplinGenerator.cs" t="Include" />
-          <e p="Movement.cs" t="Include" />
           <e p="Players" t="Include">
+            <e p="Ambient.cs" t="Include" />
+            <e p="Movement.cs" t="Include" />
             <e p="SetDistance.cs" t="Include" />
           </e>
           <e p="ScrollTexture.cs" t="Include" />
@@ -199,6 +200,7 @@
             <e p="Historical.cs" t="Include" />
             <e p="InterfaceGestor.cs" t="Include" />
             <e p="Leader.cs" t="Include" />
+            <e p="Savior.cs" t="Include" />
             <e p="Speed.cs" t="Include" />
           </e>
           <e p="Utils" t="Include">
@@ -234,7 +236,7 @@
       </e>
       <e p="EmpireStateRacing.sln" t="IncludeFlat" />
       <e p="obj" t="ExcludeRecursive" />
-      <e p="Packages" t="ExcludeRecursive" />
+      <e p="packages" t="ExcludeRecursive" />
       <e p="Temp\bin" t="ExcludeRecursive" />
     </e>
   </component>

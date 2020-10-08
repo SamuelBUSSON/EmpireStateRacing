@@ -248,6 +248,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a172091f9d6fabf4b96791dc4951b784, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  data:
+  - {fileID: 586106066392544283}
+  - {fileID: 9047482293099738226}
+  - {fileID: 2867946365544919903}
+  actual: 0
+  nextTimer: 60
 --- !u!1001 &3205999175777629145
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -395,6 +401,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3205999177192576804}
     m_Modifications:
+    - target: {fileID: 1519493056908508456, guid: 8259e9a70071fdf41b93a96d71e50158,
+        type: 3}
+      propertyPath: revert
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3718466291755794471, guid: 8259e9a70071fdf41b93a96d71e50158,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -950,11 +961,27 @@ PrefabInstance:
       propertyPath: revert
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4599766744535501175, guid: 8259e9a70071fdf41b93a96d71e50158,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 260
+      objectReference: {fileID: 0}
+    - target: {fileID: 4811822373516914977, guid: 8259e9a70071fdf41b93a96d71e50158,
+        type: 3}
+      propertyPath: m_textAlignment
+      value: 1028
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8259e9a70071fdf41b93a96d71e50158, type: 3}
 --- !u!224 &2298905260637504269 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 3718466292459250853, guid: 8259e9a70071fdf41b93a96d71e50158,
+    type: 3}
+  m_PrefabInstance: {fileID: 3205999176473077672}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &2867946365544919903 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 842456003557594359, guid: 8259e9a70071fdf41b93a96d71e50158,
     type: 3}
   m_PrefabInstance: {fileID: 3205999176473077672}
   m_PrefabAsset: {fileID: 0}
@@ -1275,6 +1302,12 @@ PrefabInstance:
 --- !u!224 &4763942750469225541 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7953660352152658660, guid: 85d55cc5fd4d3454a9ddab4ebbe2e858,
+    type: 3}
+  m_PrefabInstance: {fileID: 3205999176712789665}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &9047482293099738226 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 5905031059513387731, guid: 85d55cc5fd4d3454a9ddab4ebbe2e858,
     type: 3}
   m_PrefabInstance: {fileID: 3205999176712789665}
   m_PrefabAsset: {fileID: 0}
@@ -1705,6 +1738,12 @@ PrefabInstance:
 --- !u!224 &5838626782971584792 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9041828769119081277, guid: e5cc35afb1071e240867e40d6b8f968c,
+    type: 3}
+  m_PrefabInstance: {fileID: 3205999177018012197}
+  m_PrefabAsset: {fileID: 0}
+--- !u!225 &586106066392544283 stripped
+CanvasGroup:
+  m_CorrespondingSourceObject: {fileID: 2621019251051136574, guid: e5cc35afb1071e240867e40d6b8f968c,
     type: 3}
   m_PrefabInstance: {fileID: 3205999177018012197}
   m_PrefabAsset: {fileID: 0}

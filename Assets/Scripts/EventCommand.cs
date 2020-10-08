@@ -11,13 +11,13 @@ public enum RobotType
 public class EventCommand : ScriptableObject
 {
     // Activate paw
-    public delegate void ActivatePaw(RobotType type, int paw);
+    public delegate void ActivatePaw(RobotType type, string pseudo,  int paw);
     public event ActivatePaw onActivatePaw;
 
     public void CallActivatePaw(RobotType type, string pseudo, int paw)
     {
         //Debug.Log(pseudo + " : " + type + " -> "+ paw);
-        onActivatePaw?.Invoke(type, paw);
+        onActivatePaw?.Invoke(type, pseudo, paw);
         onSendAction?.Invoke(type, paw,pseudo);
     }
     
@@ -59,5 +59,13 @@ public class EventCommand : ScriptableObject
     public void CallEndGame(RobotType winner)
     {
         onEndGame?.Invoke(winner);
+    }
+
+    
+    public delegate void SendSavior(RobotType type, string pseudo);
+    public event SendSavior onSendSavior;
+    public void CallSavior(RobotType team, string pseudo)
+    {
+        onSendSavior?.Invoke(team,pseudo);
     }
 }
