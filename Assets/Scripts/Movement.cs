@@ -16,7 +16,6 @@ public class Movement : MonoBehaviour
     public float animSpeedScale = 1f;//Soleil
     public EventCommand command;
     
-    private bool _movementInProgress;
     private bool _midMovement;
     private TweenerCore<Vector3, Path, PathOptions> _tweenLeft;
     private TweenerCore<Vector3, Path, PathOptions> _tweenRight;
@@ -120,8 +119,10 @@ public class Movement : MonoBehaviour
                 break;
         }
         
-        if (_movementInProgress || CheckIfLegsCollide(leg))
+        if (CheckIfLegsCollide(leg))
         {
+    
+            Debug.Log("I WAS BLOCKED");
             command.CallBlockPaw(team,paw);
             return;
         }
@@ -157,7 +158,7 @@ public class Movement : MonoBehaviour
         bottomLeftLeg.DOMoveY(positionLowest.y, 1f).SetDelay(0.1f);
         bottomRightLeg.DOMoveY(positionLowest.y, 1f).SetDelay(0.1f);
         topLeftLeg.DOMoveY(positionLowest.y + 1,1f).SetDelay(0.1f);
-        topRightLeg.DOMoveY(positionLowest.y + 1, 1f).SetDelay(0.1f).OnComplete(() => command.CallEndAction(team,paw));
+        topRightLeg.DOMoveY(positionLowest.y + 1, 1f).SetDelay(0.1f).OnComplete(() => StartCoroutine(EndAction(paw)));
     }
 
     private void OnMovementUpdate(TweenerCore<Vector3, Path, PathOptions> tweenerCore)
@@ -176,7 +177,6 @@ public class Movement : MonoBehaviour
 
     private void OnMovementCompleted(int paw)
     {
-        _movementInProgress = false;
         if(_willFall)
             FallSpider(paw);
         else
@@ -194,6 +194,6 @@ public class Movement : MonoBehaviour
 
     private void OnStartMovement()
     {
-        _movementInProgress = true;
+        
     }
 }
