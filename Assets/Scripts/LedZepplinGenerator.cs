@@ -45,10 +45,10 @@ public class LedZepplinGenerator : MonoBehaviour
         if (_currentTime > timeToSpawn + Random.Range(-timeToSpawn/10.0f, timeToSpawn/10.0f))
         {
 
-            int randomNumb = Random.Range(0, zeppelin.Length - 1);
+            int randomNumb = Random.Range(0, zeppelin.Length);
             
             while(_previousObjNumber == randomNumb)
-                randomNumb = Random.Range(0, zeppelin.Length - 1);
+                randomNumb = Random.Range(0, zeppelin.Length);
 
             _previousObjNumber = randomNumb;
             GameObject go = Instantiate(zeppelin[randomNumb], transform.position + Vector3.up * (Random .Range(-20.0f, 20.0f)), Quaternion.identity);
