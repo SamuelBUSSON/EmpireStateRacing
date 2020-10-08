@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using DG.Tweening;
 using DG.Tweening.Core;
 using DG.Tweening.Plugins.Core.PathCore;
@@ -16,7 +17,9 @@ public class Movement : MonoBehaviour
     public Transform bottomRightLeg;//3
     public float animSpeedScale = 1f;//Soleil
     public EventCommand command;
-    
+
+    public List<GameObject> trails = new List<GameObject>();
+
     private bool _midMovement;
     private TweenerCore<Vector3, Path, PathOptions> _tween;
     public RobotType team;
@@ -114,10 +117,6 @@ public class Movement : MonoBehaviour
         
         if (CheckIfLegsCollide(leg))
         {
-    
-            Debug.Log("I WAS BLOCKED");
-            
-            
             Vector3 pos = leg.position;
             Vector3[] path = {pos, pos - Vector3.forward, pos + Vector3.up/2, pos - Vector3.forward, pos};
         
@@ -147,7 +146,7 @@ public class Movement : MonoBehaviour
     
     private void FallSpider(int paw)
     {
-        
+        SetTrails(true);
         var positionLowest = GetLowestLeg().position;
         bottomLeftLeg.DOMoveY(positionLowest.y, 1f).SetDelay(0.1f);
         bottomRightLeg.DOMoveY(positionLowest.y, 1f).SetDelay(0.1f);
@@ -182,8 +181,17 @@ public class Movement : MonoBehaviour
 
     private IEnumerator EndAction(int paw)
     {
+        SetTrails(false);
         yield return new WaitForSeconds(0.1f);
         command.CallEndAction(team, paw);
+    }
+
+    private void SetTrails(bool active)
+    {
+        foreach (GameObject trail in trails)
+        {
+            trail.SetActive(active);
+        }
     }
     
     private IEnumerator BlockAction( int paw)
