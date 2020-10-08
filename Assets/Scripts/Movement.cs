@@ -23,13 +23,51 @@ public class Movement : MonoBehaviour
     private bool _midMovement;
     private TweenerCore<Vector3, Path, PathOptions> _tween;
     public RobotType team;
+    
+    
+   
+    /// 
+    ///
+    ///               FMOD
+    /// 
+    ///
+    
+    [FMODUnity.EventRef]
+    public string eventStart = "";
+    private FMOD.Studio.EventInstance _eventStartFmod;
+    
+    [FMODUnity.EventRef]
+    public string eventPeak = "";
+    private FMOD.Studio.EventInstance _eventPeakFmod;
+
+    [FMODUnity.EventRef]
+    public string eventImpact = "";
+    private FMOD.Studio.EventInstance _eventImpactFmod;
+    
+    [FMODUnity.EventRef]
+    public string eventSlide = "";
+    private FMOD.Studio.EventInstance _eventSlideFmod;
+    
+    [FMODUnity.EventRef]
+    public string eventBug = "";
+    private FMOD.Studio.EventInstance _eventBugFmod;
+    
     private void Awake()
     {
         command.onActivatePaw += OnActivePaw;
         command.onSetCurrentSpeed += OnChangeTimescale;
     }
-
-
+    
+    private void Start()
+    {
+        // Init all FMOD events
+        _eventStartFmod = FMODUnity.RuntimeManager.CreateInstance(eventStart);
+        _eventPeakFmod = FMODUnity.RuntimeManager.CreateInstance(eventPeak);
+        _eventImpactFmod = FMODUnity.RuntimeManager.CreateInstance(eventImpact);
+        _eventSlideFmod = FMODUnity.RuntimeManager.CreateInstance(eventSlide);
+        _eventBugFmod = FMODUnity.RuntimeManager.CreateInstance(eventBug);
+        
+    }
 
     public float timeScale = 1;
     
@@ -123,7 +161,11 @@ public class Movement : MonoBehaviour
             _tween = leg.DOPath(path, Robot.GetByType(team).maxBuffer+1, PathType.CatmullRom)
                 .OnStart(OnStartMovement)
                 .OnUpdate(() => OnMovementUpdate(_tween))
-                .OnComplete(() => StartCoroutine(EndAction(paw)));
+                .OnComplete(() =>
+                {
+                    _eventBugFmod.start();
+                    StartCoroutine(EndAction(paw));
+                });
             _tween.timeScale = timeScale;
         }
         else
@@ -146,6 +188,7 @@ public class Movement : MonoBehaviour
     
     private void FallSpider(int paw)
     {
+        _eventSlideFmod.start();
         SetTrails(true);
         var positionLowest = GetLowestLeg().position;
         bottomLeftLeg.DOMoveY(positionLowest.y, 1f).SetDelay(0.1f);
@@ -165,7 +208,7 @@ public class Movement : MonoBehaviour
 
     private void OnMovementMid()
     {
-        // TODO some sound
+        _eventPeakFmod.start();
     }
 
     private void OnMovementCompleted(int paw)
@@ -174,6 +217,7 @@ public class Movement : MonoBehaviour
             FallSpider(paw);
         else
         {
+            _eventImpactFmod.start();
             StartCoroutine(EndAction(paw));
         }
         _willFall = false;
@@ -181,6 +225,10 @@ public class Movement : MonoBehaviour
 
     private IEnumerator EndAction(int paw)
     {
+        _eventSlideFmod.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        _eventPeakFmod.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        _eventStartFmod.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        
         SetTrails(false);
         yield return new WaitForSeconds(0.1f);
         command.CallEndAction(team, paw);
@@ -203,6 +251,6 @@ public class Movement : MonoBehaviour
 
     private void OnStartMovement()
     {
-        
+        _eventStartFmod.start();
     }
 }

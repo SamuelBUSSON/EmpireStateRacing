@@ -149,6 +149,11 @@ MonoBehaviour:
   - {fileID: 5145660158935479860}
   - {fileID: 5562521841298406475}
   team: 0
+  eventStart: "event:/Araign\xE9e/Mouv_Start"
+  eventPeak: "event:/Araign\xE9e/Mouv_Peak"
+  eventImpact: "event:/Araign\xE9e/Mouv_Impact"
+  eventSlide: "event:/Araign\xE9e/Slide"
+  eventBug: "event:/Araign\xE9e/Bug"
   timeScale: 1
 --- !u!114 &3291426896895285052
 MonoBehaviour:
