@@ -21,7 +21,7 @@ public class LedZepplinGenerator : MonoBehaviour
         }
     }
 
-    public GameObject zeppelin;
+    public GameObject[] zeppelin;
 
     public float timeToSpawn;
     public float speed;
@@ -43,7 +43,7 @@ public class LedZepplinGenerator : MonoBehaviour
         _currentTime += Time.deltaTime;
         if (_currentTime > timeToSpawn + Random.Range(-timeToSpawn/10.0f, timeToSpawn/10.0f))
         {
-            GameObject go = Instantiate(zeppelin, transform.position, Quaternion.identity);
+            GameObject go = Instantiate(zeppelin[Random.Range(0, zeppelin.Length - 1)], transform.position, Quaternion.identity);
             _generatedZeppelin.Add(new SpawnedObject(go, 0.0f));
             _currentTime = 0.0f;
         }
