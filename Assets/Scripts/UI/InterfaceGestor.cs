@@ -18,6 +18,14 @@ public class InterfaceGestor : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            
+        nextTimer -= Time.deltaTime;
+        if (nextTimer < 0)
+        {
+            data[actual].alpha = 0;
+            ++actual;
+            if (actual == data.Count) actual = 0;
+            data[actual].alpha = 1;
+            nextTimer = 60;
+        }
     }
 }
