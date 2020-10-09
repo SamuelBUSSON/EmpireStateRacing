@@ -41,9 +41,9 @@ public class Leader : MonoBehaviour
 
     void EndGame(RobotType type)
     {
+        if (this.type != type) return;
         string first = "---";
         if(data.Count > 0) first = data.OrderByDescending(key => key.Value).First().Key;
-        if (this.type != type) return;
         switch (paw)
         {
             case 0 : 

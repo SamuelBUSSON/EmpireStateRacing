@@ -56,16 +56,18 @@ public class Contributor : MonoBehaviour
         }
     }
 
-    void EndGame(RobotType type)
+    void EndGame(RobotType _type)
     {
         Win win = FindObjectOfType<Win>();
-        win.SetContributors(data);
-        win.winner.text = (type == RobotType.edison)?"Thomas Edison Win":"Nicola Tesla Win";
-        win.StartTimer();
-        
+        if(type == _type)
+        {
+            win.SetContributors(data);
+            win.winner.text = (_type == RobotType.edison)?"Thomas Edison Win":"Nicola Tesla Win";
+            win.StartTimer();
+        }
         
         Dictionary<string, int> allData = new Dictionary<string, int>();
-        var fileName = "historical_contributor_"+type+".log";
+        var fileName = "historical_contributor_"+_type+".log";
         var sr = File.OpenText("Score/" + fileName);
         
         string input;
@@ -97,11 +99,11 @@ public class Contributor : MonoBehaviour
 
         if (data.Count == 0) return;
         
-        fileName = "last_contributor_"+type+".log";
+        fileName = "last_contributor_"+_type+".log";
         writer = new StreamWriter("Score/" + fileName, false);
         
         var first = data.OrderByDescending(key => key.Value).First();
-        win.best.text = first.Key;
+        if(type == _type)win.best.text = first.Key;
         writer.WriteLine(first.Key + " " + first.Value);
         
         writer.Close();
