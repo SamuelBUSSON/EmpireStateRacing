@@ -63,7 +63,6 @@ public class LedZepplinGenerator : MonoBehaviour
                 Vector3.right * ( speed + Random.Range(-speed/2.0f, speed/2.0f)) / 100.0f * Time.deltaTime 
                 + Vector3.up * (Mathf.Sin(o.go.transform.position.x * 0.05f) * 0.05f)/2;
             o.lifetime += Time.deltaTime;
-            if(i == 0) Debug.Log(o.lifetime);
             if (o.lifetime > 15.0f && !o.go.GetComponentInChildren<Renderer>().isVisible)
             {
                 Destroy(o.go);

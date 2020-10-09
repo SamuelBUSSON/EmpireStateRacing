@@ -44,9 +44,16 @@ public class TwitchChatClient : MonoBehaviour
         Init();
     }
 
+    public float timeOut = 0;
     void Update()
     {
+        timeOut += Time.deltaTime;
         if (twitchClient == null || !twitchClient.Connected) Init();
+        if (timeOut > 10)
+        {
+            hasInitialized = false;
+            Init();
+        }
         ReadChat();
     }
 
@@ -54,13 +61,15 @@ public class TwitchChatClient : MonoBehaviour
     {
         if (hasInitialized) return;
         hasInitialized = true;
+        timeOut = 0;
 
         // Checks
         if (configurationPath == "") configurationPath = Application.persistentDataPath + "/config.json";
         if (commandPrefix == "" || commandPrefix == null) commandPrefix = "!";
         if (commandPrefix.Length > 1)
         {
-            Debug.LogError($"TwitchChatClient.Init :: Command prefix length should contain only 1 character. Command prefix: {commandPrefix}");
+            //Debug.LogError($"TwitchChatClient.Init :: Command prefix length should contain only 1 character. Command prefix: {commandPrefix}");
+            Debug.Log($"TwitchChatClient.Init :: Command prefix length should contain only 1 character. Command prefix: {commandPrefix}");
             return;
         }
 
@@ -88,7 +97,7 @@ public class TwitchChatClient : MonoBehaviour
         var message = reader.ReadLine();
 
         if (!message.Contains("PRIVMSG")) return;
-        Debug.Log(message);
+        timeOut = 0;
         var splitPoint = message.IndexOf(commandPrefix, 1);
         var username = message.Substring(0, splitPoint);
         splitPoint = message.IndexOf(":", 1);

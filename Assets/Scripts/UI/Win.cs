@@ -50,7 +50,7 @@ public class Win : MonoBehaviour
         {
             timer -= Time.deltaTime;
             timerInfo.text = "Next game in " + Mathf.Ceil(timer) + " seconds";
-            if (timer < 0) SceneManager.LoadScene(0);
+            if (timer < 0) SceneManager.LoadScene(0,LoadSceneMode.Single);
             
         }
     }

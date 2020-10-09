@@ -29,11 +29,13 @@ namespace Twitch
         {
             if (name.ToLower() == "tesla")
             {
+                Debug.Log("new");
                 type = RobotType.tesla;
                 tesla = this;
             }
             else
             {
+                Debug.Log("new");
                 type = RobotType.edison;
                 edison = this;
             }
