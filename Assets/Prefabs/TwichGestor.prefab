@@ -99,6 +99,7 @@ MonoBehaviour:
   configurationPath: Assets/Scripts/Twich/config.json
   commandPrefix: +
   automaticInit: 1
+  timeOut: 0
 --- !u!114 &3520405910290517580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,17 +113,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pseudoPlaceholder:
-  - DemonToon
-  - Un_Mouton_dans_un_Becher
-  - Daryl_Winter
-  - Smu
-  - Khadath
-  - JeanBonbeur
-  - WallaceTicot
-  - Anguilhem
-  - Poncho_del_Solar
-  - Apoal
-  - Nahkriin
+  - demontoon
+  - un_mouton_dans_un_becher
+  - daryl_winter
+  - smu
+  - khadath
+  - jean_bonbeur
+  - wallace_ticot
+  - anguilhem
+  - quenth
+  - apoal
+  - nahkriin
 --- !u!1001 &4179646877639940181
 PrefabInstance:
   m_ObjectHideFlags: 0
