@@ -88,7 +88,7 @@ public class TwitchChatClient : MonoBehaviour
         var message = reader.ReadLine();
 
         if (!message.Contains("PRIVMSG")) return;
-
+        Debug.Log(message);
         var splitPoint = message.IndexOf(commandPrefix, 1);
         var username = message.Substring(0, splitPoint);
         splitPoint = message.IndexOf(":", 1);
