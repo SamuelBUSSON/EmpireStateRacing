@@ -33,7 +33,7 @@ public class SetDistance : MonoBehaviour
         if (_isWinning && otherDistance.Value > currentDistance.Value)
             _isWinning = false;
         
-        if(Mathf.RoundToInt(currentDistance.Value * 3.72f) >= 371)
+        if(transform.position.y >= end.transform.position.y)
             GetComponent<Movement>().command.CallEndGame( GetComponent<Movement>().team);
 
 

@@ -262,6 +262,9 @@ MonoBehaviour:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+  level1Event: event:/Pallier de jauge/Level_1
+  level2Event: event:/Pallier de jauge/Level_2
+  level3Event: event:/Pallier de jauge/Level_3
   command: {fileID: 11400000, guid: df60411359dd0c048807b565d86797d7, type: 2}
 --- !u!1 &1112242817000820151
 GameObject:
