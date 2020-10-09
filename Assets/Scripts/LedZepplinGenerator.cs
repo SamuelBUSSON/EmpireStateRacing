@@ -27,7 +27,7 @@ public class LedZepplinGenerator : MonoBehaviour
     public float speed;
 
     private float _currentTime;
-    private List<SpawnedObject> _generatedZeppelin;
+    public List<SpawnedObject> _generatedZeppelin;
     private Camera _camera;
     private int _previousObjNumber;
 
@@ -55,22 +55,26 @@ public class LedZepplinGenerator : MonoBehaviour
             _generatedZeppelin.Add(new SpawnedObject(go, 0.0f));
             _currentTime = 0.0f;
         }
-    }
-
-    private void FixedUpdate()
-    {
-        foreach (SpawnedObject o in _generatedZeppelin)
+        int i =0;
+        while(i < _generatedZeppelin.Count)
         {
+            SpawnedObject o = _generatedZeppelin[i];
             o.go.transform.position += 
-                Vector3.right * ( speed + Random.Range(-speed/2.0f, speed/2.0f)) / 100.0f * Time.fixedTime 
-                + Vector3.up * (Mathf.Sin(o.go.transform.position.x * 0.05f) * 0.05f);
-            o.lifetime += Time.fixedTime;
-            
-            if (o.lifetime > 3.0f && !o.go.GetComponentInChildren<Renderer>().isVisible)
+                Vector3.right * ( speed + Random.Range(-speed/2.0f, speed/2.0f)) / 100.0f * Time.deltaTime 
+                + Vector3.up * (Mathf.Sin(o.go.transform.position.x * 0.05f) * 0.05f)/2;
+            o.lifetime += Time.deltaTime;
+            if(i == 0) Debug.Log(o.lifetime);
+            if (o.lifetime > 15.0f && !o.go.GetComponentInChildren<Renderer>().isVisible)
             {
                 Destroy(o.go);
                 _generatedZeppelin.Remove(o);
             }
+            else ++i;
         }
+    }
+
+    private void FixedUpdate()
+    {
+        
     }
 }
