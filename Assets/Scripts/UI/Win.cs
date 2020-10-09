@@ -16,10 +16,13 @@ public class Win : MonoBehaviour
     public TextMeshProUGUI delta;
     public TextMeshProUGUI best;
     public TextMeshProUGUI timerInfo;
+    public EventCommand command;
 
     public float timer;
     public void SetContributors(Dictionary<string, int> data)
     {
+        
+            
         List<TextMeshProUGUI> lists = new List<TextMeshProUGUI>();
         for (int i = 0; i < contributors.transform.childCount; ++i)
         {
@@ -41,6 +44,8 @@ public class Win : MonoBehaviour
 
     void Update()
     {
+        
+        if(Input.GetKeyDown(KeyCode.Escape)) command.CallEndGame((Random.value>0.5f)?RobotType.edison:RobotType.tesla);
         if (timer > 0)
         {
             timer -= Time.deltaTime;
