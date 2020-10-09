@@ -46,7 +46,7 @@ public class TwitchChatClient : MonoBehaviour
 
     void Update()
     {
-        if (twitchClient == null || !twitchClient.Connected) return;
+        if (twitchClient == null || !twitchClient.Connected) Init();
         ReadChat();
     }
 

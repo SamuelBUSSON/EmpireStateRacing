@@ -13,6 +13,7 @@ namespace Twitch
         {
             cooldownPseudo = new List<string>();
             TwitchChatClient.instance.onChatMessageReceived += ShowMessage;
+            
         }
 
         void ShowMessage(TwitchChatMessage chatMessage)

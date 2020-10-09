@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/SoundbankFmod/Desktop/Master.bank
   Name: Master
-  lastModified: 637377895219621839
+  lastModified: 637378060481064993
   LoadResult: 0
   FileSizes: []
   Exists: 1
@@ -110,6 +110,29 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 10000
   Length: 899
+--- !u!114 &-6798002545705210754
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/UI_End
+  m_EditorClassIdentifier: 
+  Path: event:/UI/UI_End
+  guid: 8a5d7e1e192ce04e8b438a161d239d60
+  Banks:
+  - {fileID: -8415549666492336728}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 4823
 --- !u!114 &-5727782661410297979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127,12 +150,12 @@ MonoBehaviour:
   Banks:
   - {fileID: -8415549666492336728}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
+  MinDistance: 1
+  MaxDistance: 10000
+  Length: 434
 --- !u!114 &-4122887025881765885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,12 +173,12 @@ MonoBehaviour:
   Banks:
   - {fileID: -8415549666492336728}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
+  MinDistance: 1
+  MaxDistance: 10000
+  Length: 788
 --- !u!114 &-3480494467807184886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,12 +231,14 @@ MonoBehaviour:
   - {fileID: -7945923581833364995}
   - {fileID: 5507720786879101331}
   - {fileID: 1569521545179768728}
+  - {fileID: -6798002545705210754}
+  - {fileID: 6304242916369188826}
   EditorParameters: []
   MasterBanks:
   - {fileID: -8415549666492336728}
   StringsBanks:
   - {fileID: 6929330004422770250}
-  stringsBankWriteTime: 637377895219721596
+  stringsBankWriteTime: 637378060480904964
   cacheVersion: 5
 --- !u!114 &1569521545179768728
 MonoBehaviour:
@@ -306,7 +331,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 0
   MaxDistance: 0
-  Length: 0
+  Length: 562
 --- !u!114 &5507720786879101331
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -324,12 +349,35 @@ MonoBehaviour:
   Banks:
   - {fileID: -8415549666492336728}
   IsStream: 0
-  Is3D: 0
+  Is3D: 1
   IsOneShot: 1
   Parameters: []
-  MinDistance: 0
-  MaxDistance: 0
-  Length: 0
+  MinDistance: 1
+  MaxDistance: 10000
+  Length: 1100
+--- !u!114 &6304242916369188826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Ambiance/FlyingName
+  m_EditorClassIdentifier: 
+  Path: event:/Ambiance/FlyingName
+  guid: ae5dc6156ba6ac42a428e4da3a4703e0
+  Banks:
+  - {fileID: -8415549666492336728}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 500
+  Length: 6535
 --- !u!114 &6929330004422770250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -344,11 +392,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: Assets/SoundbankFmod/Desktop/Master.strings.bank
   Name: Master.strings
-  lastModified: 637377895219721596
+  lastModified: 637378060480904964
   LoadResult: 0
   FileSizes:
   - Name: 
-    Value: 1288
+    Value: 1368
   Exists: 1
 --- !u!114 &8422348511098940892
 MonoBehaviour:
